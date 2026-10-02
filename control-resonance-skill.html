@@ -104,8 +104,8 @@
         }
 
         /* กำหนดสัดส่วนความกว้างของ 3 ช่อง */
-        th:nth-child(1), td:nth-child(1) { width: 15%; text-align: center; } /* Tier */
-        th:nth-child(2), td:nth-child(2) { width: 30%; } /* ชื่อ Talents */
+        th:nth-child(1), td:nth-child(1) { width: 10%; text-align: center; } /* Tier */
+        th:nth-child(2), td:nth-child(2) { width: 15%; } /* ชื่อ Talents */
         th:nth-child(3), td:nth-child(3) { width: 55%; } /* คำอธิบาย */
 
         tr:hover { background-color: #faf5f0; }
@@ -163,19 +163,55 @@
                 <tr>
                     <td style="text-align: center;"><span class="tier-badge">Tier 1</span></td>
                     <td><strong>Dominance</strong></td>
-                    <td>เพิ่มความเสียหายจากการโจมตีระยะประชิดหลังจากทำ Execution: การโจมตีหลักและท่าปิดคอมโบเพิ่มขึ้น +100% ส่วนการโจมตีรองเพิ่มขึ้น +50%<br>
-                        การสังหารศัตรูด้วย Dominance จะทำให้ศัตรูดรอปเลือด สถานะจะคงอยู่เป็นเวลา 8 วินาที
+                    <td>เพิ่มดาเมจการโจมตีระยะประชิดหลังจากทำ Execution<br>
+                        การโจมตีหลัก/ท่าปิดคอมโบเพิ่มขึ้น +100% และโจมตีรองเพิ่มขึ้น +50%<br>
+                        ศัตรูจะดรอปเลือดเมื่อถูกสังหารด้วยท่า Dominance สถานะจะคงอยู่เป็นเวลา 8 วินาที
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
                     <td><strong>All-Rounder</strong></td>
-                    <td>เพิ่มความเสียหาย +5% และเพิ่มผล Falter จากการโจมตีทุกรูปแบบ</td>
+                    <td>เพิ่มดาเมจ +5% และเพิ่มผล Falter จากการโจมตีทุกรูปแบบ</td>
                 </tr>
                 <tr>
                     <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
                     <td><strong>Extra Impact</strong></td>
-                    <td>เพิ่มผล Falter +10% จาก Combat Abilities</td>
+                    <td>เพิ่มผล Falter +10% ให้ Combat Abilities</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 3</span></td>
+                    <td><strong>Perfect Dodge</strong></td>
+                    <td>เมื่อกด Dodge สำเร็จจะได้รับสถานะ Retaliation การโจมตีครั้งต่อไปจะทำดาเมจเพิ่มขึ้น 50% และทำให้ศัตรูติดสถานะ Falter</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                    <td><strong>Extended Falter</strong></td>
+                    <td>ศัตรูติดสถานะ Falter นานขึ้น</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                    <td><strong>Cleansing Rush</strong></td>
+                    <td>เมื่อใช้ Rush จะช่วยลบสถานะผิดปกติเร็วขึ้นเป็นสองเท่า</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                    <td><strong>Extended Rush</strong></td>
+                    <td>ระยะเวลาของ Rush อยู่ได้นานขึ้นเป็นสามเท่า</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                    <td><strong>Retribution</strong></td>
+                    <td>เมื่อใช้ Retaliation จะเพิ่ม Falter 25%</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 5</span></td>
+                    <td><strong>Guarded Formation</strong></td>
+                    <td>ได้รับดาเมจลดลง 20% เมื่ออยู่ใกล้สิ่งที่อัญเชิญมา</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 5</span></td>
+                    <td><strong>Agile Response</strong></td>
+                    <td>เมื่อใช้ Dodge attacks จะเพิ่มดาเมจ 25% และทำให้ศัตรูติดสถานะ Falter</td>
                 </tr>
             </tbody>
         </table>
