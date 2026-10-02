@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แปลสกิล Talents - Control Resonance</title>
+    <style>
+        :root {
+            --orange-primary: #FF6A00;
+            --dark-navy: #1E2A39;
+            --bg-cream: #F4EFEA;
+            --white: #FFFFFF;
+            --gray-text: #5A6578;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-cream); color: var(--dark-navy); }
+
+        /* Header / Nav */
+        header {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 24px; font-weight: bold; color: var(--white); text-decoration: none; letter-spacing: 2px; }
+        .logo span { color: var(--orange-primary); }
+
+        /* Container หลัก */
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        
+        .back-btn { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            color: var(--orange-primary); 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        .back-btn:hover { text-decoration: underline; }
+
+        /* หัวข้อหน้าเว็บ */
+        h2 { 
+            font-size: 26px; 
+            margin-bottom: 15px; 
+            border-left: 5px solid var(--orange-primary); 
+            padding-left: 10px; 
+            color: var(--dark-navy); 
+        }
+
+        /* ส่วนอธิบายด้านบน (Intro Box) */
+        .intro-box {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--gray-text);
+        }
+        .intro-box p strong { color: var(--dark-navy); }
+
+        /* ตารางแปลสกิล 3 ช่อง */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* กำหนดสัดส่วนความกว้างของ 3 ช่อง */
+        th:nth-child(1), td:nth-child(1) { width: 15%; text-align: center; } /* Tier */
+        th:nth-child(2), td:nth-child(2) { width: 30%; } /* ชื่อ Talents */
+        th:nth-child(3), td:nth-child(3) { width: 55%; color: var(--gray-text); } /* คำอธิบาย */
+
+        tr:hover { background-color: #faf5f0; }
+
+        .tier-badge {
+            background-color: var(--orange-primary);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        /* Footer */
+        footer { text-align: center; padding: 30px; background-color: var(--dark-navy); color: var(--white); margin-top: 50px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">MA<span>T</span>AM</a>
+    </header>
+
+    <div class="container">
+        <!-- ปุ่มย้อนกลับไปหน้า Hub ประจำเกม -->
+        <a href="control-resonance.html" class="back-btn">← กลับสู่หน้าหลักเกม Control Resonance</a>
+        
+        <h2>ระบบ Talents & สกิลความสามารถ</h2>
+
+        <!-- ส่วนอธิบายด้านบน -->
+        <div class="intro-box">
+            <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
+        </div>
+
+        <!-- ตาราง 3 ช่องตามบรีฟของบอส -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>ชื่อ Talents</th>
+                    <th>คำอธิบายความสามารถ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 1</span></td>
+                    <td><strong>Resonance Boost</strong></td>
+                    <td>เพิ่มพลังโจมตีพื้นฐานขึ้น 5% เมื่อเกจพลังงานอยู่ในสถานะ Max</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 1</span></td>
+                    <td><strong>Iron Guard</strong></td>
+                    <td>ลดอัตราการใช้ค่าความอึด (Stamina) ลง 10% เมื่อกดป้องกันการโจมตี</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
+                    <td><strong>Critical Echo</strong></td>
+                    <td>เพิ่มโอกาสติดคริติคอล 8% และสร้างความเสียหายโบนัสเมื่อโจมตีจุดอ่อน</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>MATAM © 2026 — EXPLORE • PLAY • SHARE</p>
+    </footer>
+
+</body>
+</html>
