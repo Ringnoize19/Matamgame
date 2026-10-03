@@ -146,10 +146,12 @@
         .tier-badge {
             background-color: var(--orange-primary);
             color: var(--white);
-            padding: 2px 8px;
+            padding: 2px 8px;  /* ลด padding ด้านข้างลงนิดนึงให้พอดีจอมือถือ */
             border-radius: 4px;
             font-weight: bold;
-            font-size: 11px;
+            font-size: 11px;  /* ลดขนาดฟอนต์ */
+            display: inline-block;
+            white-space: nowrap;   /* 👈 คำสั่งบังคับห้ามตัดบรรทัดเด็ดขาด อยู่บรรทัดเดียวกันยาวไปเลย */
         }
 
         /* Footer */
