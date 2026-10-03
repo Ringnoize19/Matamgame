@@ -81,6 +81,62 @@
             font-weight: bold; 
         }
 
+        /* จัดเลย์เอาต์ให้เนื้อหาอยู่ซ้าย โฆษณาอยู่ขวา */
+        .main-layout {
+            display: flex;
+            gap: 30px; /* ระยะห่างระหว่างเนื้อหากับโฆษณา */
+            align-items: flex-start;
+        }
+
+        /* จัดเลย์เอาต์หน้าแรกให้แยกซ้าย-ขวาอย่างชัดเจน */
+        .home-layout {
+            display: flex;
+            justify-content: space-between; /* ดันซ้ายสุด ขวาสุดออกจากกัน */
+            align-items: flex-start;
+            gap: 40px; /* 👈 ระยะห่างระหว่างการ์ดเกมกับกล่องโฆษณา (ปรับเลขนี้ให้กว้างขึ้นได้ตามใจชอบเลยครับ) */
+        }
+
+        /* ฝั่งการ์ดเกมด้านซ้ายให้ยืดหยุ่นเต็มที่ */
+        .cards-grid-area {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .content-area {
+            flex: 1; /* ให้ฝั่งเนื้อหาขยายเต็มพื้นที่ที่เหลือ */
+        }
+
+        /* กล่อง Sidebar ด้านขวา */
+        .sidebar-ads {
+            width: 200px; /* ล็อกความกว้างมาตรฐานโฆษณา */
+            flex-shrink: 0;
+        }
+
+        /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
+        .ad-box {
+            width: 100%;
+            height: auto;
+            background-color: transparent;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--gray-text);
+            font-size: 14px;
+            padding: 0;
+            display: block;
+        }
+
+        /* ควบคุมรูปข้างในให้เต็มกรอบพอดี */
+        .ad-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;         /* ทำมุมโค้งมนสวย ๆ */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* ใส่เงาจาง ๆ ให้ดูมีมิติ */
+        }
+
         .section-title {
             font-size: 28px;
             margin-bottom: 20px;
@@ -157,6 +213,34 @@
             padding-top: 10px;
         }
 
+        /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
+        @media screen and (max-width: 768px) {
+            .main-layout {
+                flex-direction: column; /* เปลี่ยนทิศทางจากเรียงแถว เป็นเรียงลงมาแนวตั้ง */
+                gap: 20px;
+            }
+            
+            .sidebar-ads {
+                width: 100%; /* ให้กล่องโฆษณายืดเต็มความกว้างหน้าจอมือถือ */
+                box-sizing: border-box;
+            }
+
+            .ad-box {
+                width: 100%;       
+                height: auto;      /* ปล่อยความสูงตามสัดส่วนรูป */
+                padding: 0;
+                border: none;
+            }
+
+            .sidebar-ads img {
+                width: 100% !important;   /* บังคับความกว้างเต็มจอพอดี */
+                max-width: 100% !important; /* ห้ามเกินขอบจอเด็ดขาด */
+                height: auto !important;  /* ให้ความสูงย่อส่วนตามรูปอัตโนมัติ */
+                display: block;
+                margin: 0 auto;
+            }
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -188,25 +272,39 @@
         <!-- ปุ่มย้อนกลับไปหน้า Hub ประจำเกม -->
         <a href="index.html" class="back-btn">← กลับสู่หน้าหลัก</a>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        <h2 class="section-title">เกมไกด์</h2>
+        <!-- กล่องครอบหลัก: แบ่งซ้าย (เนื้อหา) ขวา (โฆษณา) -->
+        <div class="home-layout">
+            <!-- ฝั่งซ้าย: พื้นที่แสดงการ์ดเกมทั้งหมด -->
+            <div class="cards-grid-area">
 
-        <!-- Grid สำหรับใส่การ์ดเกม -->
-        <div class="grid-container">
+                <h2 class="section-title">เกมไกด์</h2>
+
+                <!-- Grid สำหรับใส่การ์ดเกม -->
+                <div class="grid-container">
             
-            <!-- การ์ดเกม: Control Resonance (กดแล้วลิงก์ไปอีกหน้า) -->
-            <a href="control-resonance-skill.html" class="card">
-                <div class="card">
-                    <!-- รูปภาพปกเกม: เปลี่ยนลิงก์รูปภาพตรง src ตามต้องการ -->
-                    <img src="control-resonant-skill.jpg" class="card-img" alt="Control Resonance">
-                    <div class="card-content">
-                        <h3 class="card-title">แปล Skill Tree และ Abilities</h3>
+                <!-- การ์ดเกม: Control Resonance (กดแล้วลิงก์ไปอีกหน้า) -->
+                <a href="control-resonance-skill.html" class="card">
+                    <div class="card">
+                        <!-- รูปภาพปกเกม: เปลี่ยนลิงก์รูปภาพตรง src ตามต้องการ -->
+                        <img src="control-resonant-skill.jpg" class="card-img" alt="Control Resonance">
+                        <div class="card-content">
+                            <h3 class="card-title">แปล Skill Tree และ Abilities</h3>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-          </div>
+              </div>
+                <!-- ฝั่งขวา: โฆษณา -->
+            <aside class="sidebar-ads">
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/aariday8" target="_blank">
+                        <img src="Ari.day8.jpg" alt="Ads" style="width: 100%; height: auto; border-radius: 8px;">
+                    </a>
+                </div>
+            </aside>
+
+        </div>
+    </div>
    
     </div>
 
