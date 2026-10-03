@@ -59,6 +59,39 @@
         }
         .back-btn:hover { text-decoration: underline; }
 
+        /* จัดเลย์เอาต์ให้เนื้อหาอยู่ซ้าย โฆษณาอยู่ขวา */
+        .main-layout {
+            display: flex;
+            gap: 30px; /* ระยะห่างระหว่างเนื้อหากับโฆษณา */
+            align-items: flex-start;
+        }
+
+        .content-area {
+            flex: 1; /* ให้ฝั่งเนื้อหาขยายเต็มพื้นที่ที่เหลือ */
+        }
+
+        /* กล่อง Sidebar ด้านขวา */
+        .sidebar-ads {
+            width: 300px; /* ล็อกความกว้างมาตรฐานโฆษณา */
+            flex-shrink: 0;
+        }
+
+        /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
+        .ad-box {
+            width: 100%;
+            height: 600px; /* ปรับความสูงได้ตามต้องการ เช่น 250px หรือ 600px */
+            background-color: var(--white);
+            border: 2px dashed #ccc; /* เส้นประขอบกล่อง */
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--gray-text);
+            font-size: 14px;
+            padding: 20px;
+        }
+        
         /* หัวข้อหน้าเว็บ */
         h2 { 
             font-size: 26px; 
@@ -266,6 +299,13 @@
         </table>
     </div>
 
+    <!-- ฝั่งขวา: พื้นที่โฆษณา / Sidebar -->
+            <aside class="sidebar-ads">
+                <div class="ad-box">
+                    <span>พื้นที่โฆษณา<br>(แนะนำขนาด 300 x 250 หรือ 300 x 600 px)</span>
+                </div>
+            </aside>
+    
     <footer>
         <p>MATAM © 2026 — EXPLORE • PLAY • SHARE</p>
     </footer>
