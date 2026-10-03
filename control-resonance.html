@@ -286,27 +286,24 @@
 
         <!-- กล่องครอบหลัก: แบ่งซ้าย (เนื้อหา) ขวา (โฆษณา) -->
         <div class="home-layout">
+            
             <!-- ฝั่งซ้าย: พื้นที่แสดงการ์ดเกมทั้งหมด -->
             <div class="cards-grid-area">
-
                 <h2 class="section-title">เกมไกด์</h2>
 
                 <!-- Grid สำหรับใส่การ์ดเกม -->
                 <div class="grid-container">
-            
-                <!-- การ์ดเกม: Control Resonance (กดแล้วลิงก์ไปอีกหน้า) -->
-                <a href="control-resonance-skill.html" class="card">
-                    <div class="card">
-                        <!-- รูปภาพปกเกม: เปลี่ยนลิงก์รูปภาพตรง src ตามต้องการ -->
+                    <a href="control-resonance-skill.html" class="card">
+                        <!-- ⚠️ ลบ div class="card" ที่ซ้ำซ้อนด้านในออก เพื่อไม่ให้เลย์เอาต์เพี้ยน -->
                         <img src="control-resonant-skill.jpg" class="card-img" alt="Control Resonance">
-                        <div class="card-content">
+                        <div class="card-content" style="padding: 10px;">
                             <h3 class="card-title">แปล Skill Tree และ Abilities</h3>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                </div>
+            </div> <!-- 👈 ปิดฝั่งซ้าย .cards-grid-area ตรงนี้ให้ถูกต้อง -->
 
-              </div>
-                <!-- ฝั่งขวา: โฆษณา -->
+            <!-- 👈 ย้ายกล่องโฆษณามาไว้ข้างนอกฝั่งซ้าย แต่อยู่ใน home-layout ฝั่งขวา -->
             <aside class="sidebar-ads">
                 <div class="ad-box">
                     <a href="https://www.facebook.com/aariday8" target="_blank">
