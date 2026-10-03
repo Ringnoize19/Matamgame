@@ -76,9 +76,11 @@
         .section-title {
             font-size: 28px;
             margin-bottom: 20px;
-            border-left: 5px solid var(--orange-primary);
+            border-left: 5px solid var(--orange-primary); /* ขีดส้มจะอยู่แค่ความสูงของตัวหนังสือ h2 เป๊ะๆ */
             padding-left: 10px;
             color: var(--dark-navy);
+            height: auto; /* ป้องกันไม่ให้มันยืด */
+            display: inline-block; /* 👈 บังคับให้กรอบความสูงเท่ากับตัวหนังสือพอดี ไม่ลากยาว */
         }
 
         /* Grid การ์ดสไตล์ Game Guide / Blog */
