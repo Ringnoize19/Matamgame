@@ -136,6 +136,13 @@
             font-weight: 400;
         }
 
+        /* บังคับช่องคอลัมน์แรก (Tier) ให้กว้างพอดี ไม่ให้ตัวหนังสือเบียดกัน */
+        th:nth-child(1), td:nth-child(1) { 
+            width: 20%; 
+            text-align: center; 
+            padding: 10px 4px; /* ลดขอบซ้ายขวาของช่องตารางลง */
+        }
+
         /* กำหนดสัดส่วนความกว้างของ 3 ช่อง */
         th:nth-child(1), td:nth-child(1) { width: 10%; text-align: center; } /* Tier */
         th:nth-child(2), td:nth-child(2) { width: 13%; } /* ชื่อ Talents */
