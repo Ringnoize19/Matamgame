@@ -66,6 +66,20 @@
             align-items: flex-start;
         }
 
+        /* จัดเลย์เอาต์หน้าแรกให้แยกซ้าย-ขวาอย่างชัดเจน */
+        .home-layout {
+            display: flex;
+            justify-content: space-between; /* ดันซ้ายสุด ขวาสุดออกจากกัน */
+            align-items: flex-start;
+            gap: 40px; /* 👈 ระยะห่างระหว่างการ์ดเกมกับกล่องโฆษณา (ปรับเลขนี้ให้กว้างขึ้นได้ตามใจชอบเลยครับ) */
+        }
+
+        /* ฝั่งการ์ดเกมด้านซ้ายให้ยืดหยุ่นเต็มที่ */
+        .cards-grid-area {
+            flex: 1;
+            min-width: 0;
+        }
+
         .content-area {
             flex: 1; /* ให้ฝั่งเนื้อหาขยายเต็มพื้นที่ที่เหลือ */
         }
@@ -223,10 +237,10 @@
         <a href="control-resonance.html" class="back-btn">← กลับสู่หน้าหลักเกม Control Resonance</a>
 
         <!-- กล่องครอบหลัก: แบ่งซ้าย (เนื้อหา) ขวา (โฆษณา) -->
-        <div class="main-layout">
+        <div class="home-layout">
 
-            <!-- ฝั่งซ้าย: ตารางและเนื้อหาไกด์ -->
-            <div class="content-area">
+            <!-- ฝั่งซ้าย: พื้นที่แสดงการ์ดเกมทั้งหมด -->
+            <div class="cards-grid-area">
                 <h2>ระบบ Talents & สกิลความสามารถ</h2>
                 
                 <!-- ส่วนอธิบายด้านบน -->
@@ -350,13 +364,11 @@
                 </table>
             </div>
         
-            <!-- ฝั่งขวา: พื้นที่โฆษณา / Sidebar -->
+            <!-- ฝั่งขวา: โฆษณา -->
             <aside class="sidebar-ads">
                 <div class="ad-box">
-                    <!-- ครอบรูปด้วยแท็ก a เพื่อทำเป็นลิงก์ -->
                     <a href="https://www.facebook.com/aariday8" target="_blank">
-                        <!-- เปลี่ยนชื่อไฟล์รูปภาพโฆษณาตามที่บอสอัปโหลดไว้ใน GitHub -->
-                        <img src="Ari.day8.jpg" alt="Facebook Banner" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                        <img src="Ari.day8.jpg" alt="Ads" style="width: 100%; height: auto; border-radius: 8px;">
                     </a>
                 </div>
             </aside>
