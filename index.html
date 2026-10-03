@@ -160,8 +160,10 @@
 
         /* กล่อง Sidebar ด้านขวา */
         .sidebar-ads {
-            width: 200px; /* ล็อกความกว้างมาตรฐานโฆษณา */
-            flex-shrink: 0;
+            width: 200px;        /* ความกว้างมาตรฐานโฆษณา */
+            flex-shrink: 0;      /* ป้องกันไม่ให้กล่องโฆษณาโดนบีบย่อส่วน */
+            position: sticky;    /* (แถมพิเศษ) ให้โฆษณาเลื่อนตามจอลงมาเวลาคนไถอ่านเพลินๆ ด้วย เท่มาก! */
+            top: 20px;           /* ระยะห่างจากขอบบนเวลาเลื่อนจอ */
         }
 
         /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
@@ -187,6 +189,22 @@
             height: auto;
             border-radius: 8px;         /* ทำมุมโค้งมนสวย ๆ */
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* ใส่เงาจาง ๆ ให้ดูมีมิติ */
+        }
+
+        /* จัดเลย์เอาต์หน้าแรกให้แยกซ้าย-ขวาอย่างชัดเจน */
+        .home-layout {
+            display: flex;
+            justify-content: space-between; /* ดันซ้ายสุด ขวาสุดออกจากกัน */
+            align-items: flex-start;
+            gap: 40px; /* 👈 ระยะห่างระหว่างการ์ดเกมกับกล่องโฆษณา (ปรับเลขนี้ให้กว้างขึ้นได้ตามใจชอบเลยครับ) */
+        }
+
+        /* ฝั่งการ์ดเกมด้านซ้ายให้ยืดหยุ่นเต็มที่ */
+        .cards-grid-area {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* จัดเรียงการ์ดเป็นกริดสวยๆ */
+            gap: 20px;
         }
 
         /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
@@ -226,17 +244,17 @@
     <!-- Main Content Container -->
     <div class="container">
         
-        <!-- กล่องครอบหลัก: แบ่งซ้าย (เนื้อหา) ขวา (โฆษณา) -->
-        <div class="main-layout">
+        <!-- กล่องครอบหลัก: บังคับแบ่งฝั่งซ้าย (การ์ดเกม) และขวา (โฆษณา) -->
+        <div class="home-layout">
 
-            <!-- ฝั่งซ้าย: ตารางและเนื้อหาไกด์ -->
-            <div class="content-area">
+            <!-- ฝั่งซ้าย: พื้นที่แสดงการ์ดเกมทั้งหมดของบอส -->
+            <div class="cards-grid-area">
 
                 <h2 class="section-title">รายชื่อเกม</h2>
 
                     <!-- Grid สำหรับใส่การ์ดเกม -->
                     <div class="grid-container">
-            
+                        
                     <!-- การ์ดเกม: Control Resonance (กดแล้วลิงก์ไปอีกหน้า) -->
                     <a href="control-resonance.html" class="card">
                         <div class="card">
@@ -248,19 +266,16 @@
                     </div>
                 </a>
 
-                <!-- ฝั่งขวา: พื้นที่โฆษณา / Sidebar -->
-                <aside class="sidebar-ads">
-                <div class="ad-box">
-                    <!-- ครอบรูปด้วยแท็ก a เพื่อทำเป็นลิงก์ -->
-                    <a href="https://www.facebook.com/aariday8" target="_blank">
-                        <!-- เปลี่ยนชื่อไฟล์รูปภาพโฆษณาตามที่บอสอัปโหลดไว้ใน GitHub -->
-                        <img src="Ari.day8.jpg" alt="Facebook Banner" style="width: 100%; height: auto; display: block; border-radius: 8px;">
-                    </a>
-                </div>
+                    <!-- ฝั่งขวา: กล่องโฆษณาที่อยากให้ชิดขวานิ่ง ๆ -->
+                    <aside class="sidebar-ads">
+                    <div class="ad-box">
+                        <a href="ลิงก์เฟสบุ๊คของบอส" target="_blank">
+                            <img src="image-card/ชื่อรูปแบนเนอร์.jpg" alt="Ads" style="width: 100%; height: auto; border-radius: 8px;">
+                        </a>
+                    </div>
                 </aside>
-          
+          </div>
         </div>
-   
     </div>
 
     <footer>
