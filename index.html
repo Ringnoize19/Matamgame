@@ -158,6 +158,37 @@
             font-size: 14px;
         }
 
+        /* กล่อง Sidebar ด้านขวา */
+        .sidebar-ads {
+            width: 200px; /* ล็อกความกว้างมาตรฐานโฆษณา */
+            flex-shrink: 0;
+        }
+
+        /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
+        .ad-box {
+            width: 100%;
+            height: auto;
+            background-color: transparent;
+            border: none;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--gray-text);
+            font-size: 14px;
+            padding: 0;
+            display: block;
+        }
+
+        /* ควบคุมรูปข้างในให้เต็มกรอบพอดี */
+        .ad-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;         /* ทำมุมโค้งมนสวย ๆ */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* ใส่เงาจาง ๆ ให้ดูมีมิติ */
+        }
+
         /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
         @media screen and (max-width: 768px) {
             /* 1. จัดการตัวกล่องการ์ดหรือกรอบรูป */
@@ -194,23 +225,41 @@
 
     <!-- Main Content Container -->
     <div class="container">
-        <h2 class="section-title">รายชื่อเกม</h2>
+        
+        <!-- กล่องครอบหลัก: แบ่งซ้าย (เนื้อหา) ขวา (โฆษณา) -->
+        <div class="main-layout">
 
-        <!-- Grid สำหรับใส่การ์ดเกม -->
-        <div class="grid-container">
+            <!-- ฝั่งซ้าย: ตารางและเนื้อหาไกด์ -->
+            <div class="content-area">
+
+                <h2 class="section-title">รายชื่อเกม</h2>
+
+                    <!-- Grid สำหรับใส่การ์ดเกม -->
+                    <div class="grid-container">
             
-            <!-- การ์ดเกม: Control Resonance (กดแล้วลิงก์ไปอีกหน้า) -->
-            <a href="control-resonance.html" class="card">
-                <div class="card">
-                    <!-- รูปภาพปกเกม: เปลี่ยนลิงก์รูปภาพตรง src ตามต้องการ -->
-                    <img src="Control Resonant.jpg" class="card-img" alt="Control Resonance">
-                    <div class="card-content">
-                        <h3 class="card-title">Control Resonance</h3>
+                    <!-- การ์ดเกม: Control Resonance (กดแล้วลิงก์ไปอีกหน้า) -->
+                    <a href="control-resonance.html" class="card">
+                        <div class="card">
+                        <!-- รูปภาพปกเกม: เปลี่ยนลิงก์รูปภาพตรง src ตามต้องการ -->
+                        <img src="Control Resonant.jpg" class="card-img" alt="Control Resonance">
+                        <div class="card-content">
+                            <h3 class="card-title">Control Resonance</h3>
+                        </div>
                     </div>
-                </div>
-            </a>
+                </a>
 
-          </div>
+                <!-- ฝั่งขวา: พื้นที่โฆษณา / Sidebar -->
+                <aside class="sidebar-ads">
+                <div class="ad-box">
+                    <!-- ครอบรูปด้วยแท็ก a เพื่อทำเป็นลิงก์ -->
+                    <a href="https://www.facebook.com/aariday8" target="_blank">
+                        <!-- เปลี่ยนชื่อไฟล์รูปภาพโฆษณาตามที่บอสอัปโหลดไว้ใน GitHub -->
+                        <img src="Ari.day8.jpg" alt="Facebook Banner" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                    </a>
+                </div>
+                </aside>
+          
+        </div>
    
     </div>
 
