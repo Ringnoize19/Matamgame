@@ -186,27 +186,28 @@
 
         /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
         @media screen and (max-width: 768px) {
+            /* 👈 เพิ่มบรรทัดนี้เพื่อให้โฆษณาตกลงมาอยู่ด้านล่างบนมือถือ ไม่ทับตาราง */
             .main-layout {
-                flex-direction: column; /* เปลี่ยนทิศทางจากเรียงแถว เป็นเรียงลงมาแนวตั้ง */
+                flex-direction: column; 
                 gap: 20px;
             }
             
             .sidebar-ads {
-                width: 100%; /* ให้กล่องโฆษณายืดเต็มความกว้างหน้าจอมือถือ */
+                width: 100% !important;
                 box-sizing: border-box;
             }
 
             .ad-box {
                 width: 100%;       
-                height: auto;      /* ปล่อยความสูงตามสัดส่วนรูป */
+                height: auto;      
                 padding: 0;
                 border: none;
             }
 
             .sidebar-ads img {
-                width: 100% !important;   /* บังคับความกว้างเต็มจอพอดี */
-                max-width: 100% !important; /* ห้ามเกินขอบจอเด็ดขาด */
-                height: auto !important;  /* ให้ความสูงย่อส่วนตามรูปอัตโนมัติ */
+                width: 100% !important;   
+                max-width: 100% !important; 
+                height: auto !important;  
                 display: block;
                 margin: 0 auto;
             }
@@ -233,17 +234,14 @@
     </header>
 
     <div class="container">
-        <!-- ปุ่มย้อนกลับไปหน้า Hub ประจำเกม -->
         <a href="control-resonance.html" class="back-btn">← กลับสู่หน้าหลักเกม Control Resonance</a>
 
-        <!-- กล่องครอบหลัก: แบ่งซ้าย (เนื้อหา) ขวา (โฆษณา) -->
-        <div class="home-layout">
+        <!-- ใช้ .main-layout ครอบฝั่งซ้าย (ตารางเนื้อหา) และฝั่งขวา (โฆษณา) -->
+        <div class="main-layout">
 
-            <!-- ฝั่งซ้าย: พื้นที่แสดงการ์ดเกมทั้งหมด -->
-            <div class="cards-grid-area">
+            <!-- ฝั่งซ้าย: เนื้อหาและตารางสกิล -->
+            <div class="content-area">
                 <h2>ระบบ Talents & สกิลความสามารถ</h2>
-                
-                <!-- ส่วนอธิบายด้านบน -->
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
                 </div>
@@ -368,7 +366,7 @@
             <aside class="sidebar-ads">
                 <div class="ad-box">
                     <a href="https://www.facebook.com/aariday8" target="_blank">
-                        <img src="Ari.day8.jpg" alt="Ads" style="width: 100%; height: auto; border-radius: 8px;">
+                        <img src="Ari.day8.jpg" alt="Ads">
                     </a>
                 </div>
             </aside>
