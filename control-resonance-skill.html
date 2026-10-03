@@ -72,14 +72,14 @@
 
         /* กล่อง Sidebar ด้านขวา */
         .sidebar-ads {
-            width: 300px; /* ล็อกความกว้างมาตรฐานโฆษณา */
+            width: 200px; /* ล็อกความกว้างมาตรฐานโฆษณา */
             flex-shrink: 0;
         }
 
         /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
         .ad-box {
             width: 100%;
-            height: 600px; /* ปรับความสูงได้ตามต้องการ เช่น 250px หรือ 600px */
+            height: 400px; /* ปรับความสูงได้ตามต้องการ เช่น 250px หรือ 600px */
             background-color: var(--white);
             border: 2px dashed #ccc; /* เส้นประขอบกล่อง */
             border-radius: 10px;
@@ -175,137 +175,145 @@
     <div class="container">
         <!-- ปุ่มย้อนกลับไปหน้า Hub ประจำเกม -->
         <a href="control-resonance.html" class="back-btn">← กลับสู่หน้าหลักเกม Control Resonance</a>
+
+        <!-- กล่องครอบหลัก: แบ่งซ้าย (เนื้อหา) ขวา (โฆษณา) -->
+        <div class="main-layout">
+
+            <!-- ฝั่งซ้าย: ตารางและเนื้อหาไกด์ -->
+            <div class="content-area">
+                <h2>ระบบ Talents & สกิลความสามารถ</h2>
+                
+                <!-- ส่วนอธิบายด้านบน -->
+                <div class="intro-box">
+                    <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
+                </div>
+                
+                <!-- ตาราง 3 ช่องตามบรีฟของบอส -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tier</th>
+                            <th>ชื่อ Talents</th>
+                            <th>คำอธิบายความสามารถ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 1</span></td>
+                            <td><strong>Dominance</strong></td>
+                            <td>เพิ่มดาเมจการโจมตีระยะประชิดหลังจากทำ Execution<br>
+                                การโจมตีหลัก/ท่าปิดคอมโบเพิ่มขึ้น +100% และโจมตีรองเพิ่มขึ้น +50%<br>
+                                ศัตรูจะดรอปเลือดเมื่อถูกสังหารด้วยท่า Dominance สถานะจะคงอยู่เป็นเวลา 8 วินาที
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
+                            <td><strong>All-Rounder</strong></td>
+                            <td>เพิ่มดาเมจ +5% และเพิ่มผล Falter จากการโจมตีทุกรูปแบบ</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
+                            <td><strong>Extra Impact</strong></td>
+                            <td>เพิ่มผล Falter +10% ให้ Combat Abilities</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 3</span></td>
+                            <td><strong>Perfect Dodge</strong></td>
+                            <td>เมื่อกด Dodge สำเร็จจะได้รับสถานะ Retaliation การโจมตีครั้งต่อไปจะทำดาเมจเพิ่มขึ้น 50% และทำให้ศัตรูติดสถานะ Falter</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                            <td><strong>Extended Falter</strong></td>
+                            <td>ศัตรูติดสถานะ Falter นานขึ้น</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                            <td><strong>Cleansing Rush</strong></td>
+                            <td>เมื่อใช้ Rush จะช่วยลบสถานะผิดปกติเร็วขึ้นเป็นสองเท่า</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                            <td><strong>Extended Rush</strong></td>
+                            <td>ระยะเวลาของ Rush อยู่ได้นานขึ้นเป็นสามเท่า</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
+                            <td><strong>Retribution</strong></td>
+                            <td>เมื่อใช้ Retaliation จะเพิ่ม Falter 25%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 5</span></td>
+                            <td><strong>Guarded Formation</strong></td>
+                            <td>ได้รับดาเมจลดลง 20% เมื่ออยู่ใกล้สิ่งที่อัญเชิญมา</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 5</span></td>
+                            <td><strong>Agile Response</strong></td>
+                            <td>เมื่อใช้ Dodge attacks จะเพิ่มดาเมจ 25% และทำให้ศัตรูติดสถานะ Falter</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 6</span></td>
+                            <td><strong>Restorative Summons</strong></td>
+                            <td>ศัตรูจะดรอปเลือดเมื่อถูกสังหารด้วยสิ่งที่เราเชิญมา</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 6</span></td>
+                            <td><strong>Sanctioned Retaliation</strong></td>
+                            <td>เมื่อใช้ Retaliation ฟื้นฟู Power เพิ่มขึ้น 50%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 6</span></td>
+                            <td><strong>Skilled Backstab</strong></td>
+                            <td>เมื่อโจมตีศัตรูจากด้านหลังด้วยการโจมตีระยะประชิดจะทำดาเมจและทำให้ศัตรูติดสถานะ Falter เพิ่มขึ้น 50%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
+                            <td><strong>Enduring Ally</strong></td>
+                            <td>เพิ่มระยะเวลาคงอยู่ของสิ่งที่อัญเชิญ 50%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
+                            <td><strong>Mold Colony</strong></td>
+                            <td>Dylan เพิ่ม Mold ได้อีก 1</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
+                            <td><strong>Reactive Detonation</strong></td>
+                            <td>เมื่อกด Perfect Dodge สำเร็จขณะติดไฟจะทำให้ศัตรูโดยรอบถูกไฟเผา</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
+                            <td><strong>Back Stab Recovery</strong></td>
+                            <td>เมื่อโจมตีศัตรูจากด้านหลังด้วยการโจมตีระยะประชิดจะเพิ่ม Power 50%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
+                            <td><strong>Decisive Step-up</strong></td>
+                            <td>หลังจากทำ Execution สำเร็จจะเปิดสถานะ Keen<br>
+                                ทำให้เพิ่มโอกาสคริติคอล 20% ให้กับการโจมตีระยะประชิดทั้งหมดเป็นเวลาสั้นๆ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
+                            <td><strong>Resurgence</strong></td>
+                            <td>ศัตรูที่โจมตี Dylan ในขณะที่ติดไฟหรือมีโล่ป้องกันทำงานอยู่จะติดสถานะ Vengeance<br>
+                                ทำให้ให้ศัตรูได้รับดาเมจ 50% และติดสถานะ Falter เมื่อถูกโจมตีด้วยการโจมตีระยะประชิดหรือ Shield Bash
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         
-        <h2>ระบบ Talents & สกิลความสามารถ</h2>
-
-        <!-- ส่วนอธิบายด้านบน -->
-        <div class="intro-box">
-            <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
-        </div>
-
-        <!-- ตาราง 3 ช่องตามบรีฟของบอส -->
-        <table>
-            <thead>
-                <tr>
-                    <th>Tier</th>
-                    <th>ชื่อ Talents</th>
-                    <th>คำอธิบายความสามารถ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 1</span></td>
-                    <td><strong>Dominance</strong></td>
-                    <td>เพิ่มดาเมจการโจมตีระยะประชิดหลังจากทำ Execution<br>
-                        การโจมตีหลัก/ท่าปิดคอมโบเพิ่มขึ้น +100% และโจมตีรองเพิ่มขึ้น +50%<br>
-                        ศัตรูจะดรอปเลือดเมื่อถูกสังหารด้วยท่า Dominance สถานะจะคงอยู่เป็นเวลา 8 วินาที
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
-                    <td><strong>All-Rounder</strong></td>
-                    <td>เพิ่มดาเมจ +5% และเพิ่มผล Falter จากการโจมตีทุกรูปแบบ</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
-                    <td><strong>Extra Impact</strong></td>
-                    <td>เพิ่มผล Falter +10% ให้ Combat Abilities</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 3</span></td>
-                    <td><strong>Perfect Dodge</strong></td>
-                    <td>เมื่อกด Dodge สำเร็จจะได้รับสถานะ Retaliation การโจมตีครั้งต่อไปจะทำดาเมจเพิ่มขึ้น 50% และทำให้ศัตรูติดสถานะ Falter</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
-                    <td><strong>Extended Falter</strong></td>
-                    <td>ศัตรูติดสถานะ Falter นานขึ้น</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
-                    <td><strong>Cleansing Rush</strong></td>
-                    <td>เมื่อใช้ Rush จะช่วยลบสถานะผิดปกติเร็วขึ้นเป็นสองเท่า</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
-                    <td><strong>Extended Rush</strong></td>
-                    <td>ระยะเวลาของ Rush อยู่ได้นานขึ้นเป็นสามเท่า</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 4</span></td>
-                    <td><strong>Retribution</strong></td>
-                    <td>เมื่อใช้ Retaliation จะเพิ่ม Falter 25%</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 5</span></td>
-                    <td><strong>Guarded Formation</strong></td>
-                    <td>ได้รับดาเมจลดลง 20% เมื่ออยู่ใกล้สิ่งที่อัญเชิญมา</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 5</span></td>
-                    <td><strong>Agile Response</strong></td>
-                    <td>เมื่อใช้ Dodge attacks จะเพิ่มดาเมจ 25% และทำให้ศัตรูติดสถานะ Falter</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 6</span></td>
-                    <td><strong>Restorative Summons</strong></td>
-                    <td>ศัตรูจะดรอปเลือดเมื่อถูกสังหารด้วยสิ่งที่เราเชิญมา</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 6</span></td>
-                    <td><strong>Sanctioned Retaliation</strong></td>
-                    <td>เมื่อใช้ Retaliation ฟื้นฟู Power เพิ่มขึ้น 50%</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 6</span></td>
-                    <td><strong>Skilled Backstab</strong></td>
-                    <td>เมื่อโจมตีศัตรูจากด้านหลังด้วยการโจมตีระยะประชิดจะทำดาเมจและทำให้ศัตรูติดสถานะ Falter เพิ่มขึ้น 50%</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
-                    <td><strong>Enduring Ally</strong></td>
-                    <td>เพิ่มระยะเวลาคงอยู่ของสิ่งที่อัญเชิญ 50%</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
-                    <td><strong>Mold Colony</strong></td>
-                    <td>Dylan เพิ่ม Mold ได้อีก 1</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
-                    <td><strong>Reactive Detonation</strong></td>
-                    <td>เมื่อกด Perfect Dodge สำเร็จขณะติดไฟจะทำให้ศัตรูโดยรอบถูกไฟเผา</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
-                    <td><strong>Back Stab Recovery</strong></td>
-                    <td>เมื่อโจมตีศัตรูจากด้านหลังด้วยการโจมตีระยะประชิดจะเพิ่ม Power 50%</td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
-                    <td><strong>Decisive Step-up</strong></td>
-                    <td>หลังจากทำ Execution สำเร็จจะเปิดสถานะ Keen<br>
-                        ทำให้เพิ่มโอกาสคริติคอล 20% ให้กับการโจมตีระยะประชิดทั้งหมดเป็นเวลาสั้นๆ
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: center;"><span class="tier-badge">Tier 7</span></td>
-                    <td><strong>Resurgence</strong></td>
-                    <td>ศัตรูที่โจมตี Dylan ในขณะที่ติดไฟหรือมีโล่ป้องกันทำงานอยู่จะติดสถานะ Vengeance<br>
-                        ทำให้ให้ศัตรูได้รับดาเมจ 50% และติดสถานะ Falter เมื่อถูกโจมตีด้วยการโจมตีระยะประชิดหรือ Shield Bash
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <!-- ฝั่งขวา: พื้นที่โฆษณา / Sidebar -->
+            <!-- ฝั่งขวา: พื้นที่โฆษณา / Sidebar -->
             <aside class="sidebar-ads">
                 <div class="ad-box">
-                    <span>พื้นที่โฆษณา<br>(แนะนำขนาด 300 x 250 หรือ 300 x 600 px)</span>
+                    <span>พื้นที่โฆษณา<br>(แนะนำขนาด 200 x 400 px)</span>
                 </div>
             </aside>
-    
+
+        </div>
+    </div>
+   
     <footer>
         <p>MATAM © 2026 — EXPLORE • PLAY • SHARE</p>
     </footer>
