@@ -179,10 +179,22 @@
             
             .sidebar-ads {
                 width: 100%; /* ให้กล่องโฆษณายืดเต็มความกว้างหน้าจอมือถือ */
+                box-sizing: border-box;
             }
 
             .ad-box {
-                height: auto; /* ปรับความสูงบนมือถือให้เตี้ยลง ไม่เกะกะสายตา */
+                width: 100%;       
+                height: auto;      /* ปล่อยความสูงตามสัดส่วนรูป */
+                padding: 0;
+                border: none;
+            }
+
+            .sidebar-ads img {
+                width: 100% !important;   /* บังคับความกว้างเต็มจอพอดี */
+                max-width: 100% !important; /* ห้ามเกินขอบจอเด็ดขาด */
+                height: auto !important;  /* ให้ความสูงย่อส่วนตามรูปอัตโนมัติ */
+                display: block;
+                margin: 0 auto;
             }
         }
 
