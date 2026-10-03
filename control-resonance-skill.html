@@ -161,6 +161,22 @@
             white-space: nowrap;   /* 👈 คำสั่งบังคับห้ามตัดบรรทัดเด็ดขาด อยู่บรรทัดเดียวกันยาวไปเลย */
         }
 
+        /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
+        @media screen and (max-width: 768px) {
+            .main-layout {
+                flex-direction: column; /* เปลี่ยนทิศทางจากเรียงแถว เป็นเรียงลงมาแนวตั้ง */
+                gap: 20px;
+            }
+            
+            .sidebar-ads {
+                width: 100%; /* ให้กล่องโฆษณายืดเต็มความกว้างหน้าจอมือถือ */
+            }
+
+            .ad-box {
+                height: 250px; /* ปรับความสูงบนมือถือให้เตี้ยลง ไม่เกะกะสายตา */
+            }
+        }
+
         /* Footer */
         footer { text-align: center; padding: 30px; background-color: var(--dark-navy); color: var(--white); margin-top: 50px; font-size: 14px; }
     </style>
@@ -316,7 +332,11 @@
             <!-- ฝั่งขวา: พื้นที่โฆษณา / Sidebar -->
             <aside class="sidebar-ads">
                 <div class="ad-box">
-                    <span>พื้นที่โฆษณา<br>(แนะนำขนาด 200 x 400 px)</span>
+                    <!-- ครอบรูปด้วยแท็ก a เพื่อทำเป็นลิงก์ -->
+                    <a href="https://www.facebook.com/aariday8" target="_blank">
+                        <!-- เปลี่ยนชื่อไฟล์รูปภาพโฆษณาตามที่บอสอัปโหลดไว้ใน GitHub -->
+                        <img src="Ari.day8.jpg" alt="Facebook Banner" style="width: 100%; height: auto; display: block; border-radius: 8px;">
+                    </a>
                 </div>
             </aside>
 
