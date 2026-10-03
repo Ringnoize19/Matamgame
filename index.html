@@ -162,35 +162,41 @@
 
         /* กล่อง Sidebar ด้านขวา */
         .sidebar-ads {
-            width: 200px;        /* ความกว้างมาตรฐานโฆษณา */
-            flex-shrink: 0;      /* ป้องกันไม่ให้กล่องโฆษณาโดนบีบย่อส่วน */
-            position: sticky;    /* (แถมพิเศษ) ให้โฆษณาเลื่อนตามจอลงมาเวลาคนไถอ่านเพลินๆ ด้วย เท่มาก! */
-            top: 20px;           /* ระยะห่างจากขอบบนเวลาเลื่อนจอ */
+            width: 150px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* ระยะห่างระหว่างกล่องโฆษณาแต่ละตัว */
+            position: sticky;
+            top: 20px;
         }
 
         /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
         .ad-box {
-            width: 100%;
-            height: auto;
-            background-color: transparent;
-            border: none;
+            width: 150px;
+            height: 300px;
+            background-color: var(--white);
             border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             display: flex;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            color: var(--gray-text);
-            font-size: 14px;
-            padding: 0;
-            display: block;
         }
 
         /* ควบคุมรูปข้างในให้เต็มกรอบพอดี */
         .ad-box img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;         /* ทำมุมโค้งมนสวย ๆ */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* ใส่เงาจาง ๆ ให้ดูมีมิติ */
+            height: 100%;
+            object-fit: cover; /* ตัดรูปให้เต็มกรอบสวยๆ ไม่เบี้ยว */
+            display: block;
+        }
+
+        .ad-placeholder {
+            border: 2px dashed #cbd5e1;
+            background-color: #fafaf9;
+            text-align: center;
+            padding: 20px;
         }
 
         /* จัดเลย์เอาต์หน้าแรกให้แยกซ้าย-ขวาอย่างชัดเจน */
@@ -274,13 +280,33 @@
                 </div>
             </div>
 
-            <!-- ฝั่งขวา: โฆษณา -->
+            <!-- ฝั่งขวา: โฆษณา 3 ตัวเรียงลงมา -->
             <aside class="sidebar-ads">
+                
+                <!-- ตัวที่ 1: รูปแบนเนอร์และลิงก์เดิม -->
                 <div class="ad-box">
-                    <a href="https://www.facebook.com/aariday8" target="_blank">
-                        <img src="Ari.day8.jpg" alt="Ads" style="width: 100%; height: auto; border-radius: 8px;">
+                    <a href="https://www.facebook.com/aariday8" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="Ari.day8.jpg" alt="Ads 1">
                     </a>
                 </div>
+
+                <!-- ตัวที่ 2: มีรูปและลิงก์ตัวที่ 2 (เปลี่ยนลิงก์และชื่อรูปทีหลังได้ครับ) -->
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/RoboCodCenterRobot" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="RoboCod.jpg" alt="Ads 2">
+                    </a>
+                </div>
+
+                <!-- ตัวที่ 3: กรอบเส้นประ "พื้นที่โฆษณา" ขนาด 200x400 -->
+                <div class="ad-box ad-placeholder">
+                    <div>
+                        <p style="color: var(--gray-text); font-size: 14px; font-weight: bold; line-height: 1.5; margin: 0;">
+                            ✨ พื้นที่โฆษณา<br>
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: normal;">(ขนาด 200 x 400 px)<br>สนใจติดต่อลงโฆษณา</span>
+                        </p>
+                    </div>
+                </div>
+
             </aside>
 
         </div>
