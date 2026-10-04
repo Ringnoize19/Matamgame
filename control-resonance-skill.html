@@ -156,6 +156,8 @@
         /* ตารางแปลสกิล 3 ช่อง */
         table {
             width: 100%;
+            max-width: 100%; /* 👈 เพิ่มบรรทัดนี้เพื่อกันตารางล้นจอ */
+            table-layout: fixed; /* 👈 บังคับให้ตารางบีบตัวตามสัดส่วน ไม่ดันขอบแตก */
             border-collapse: collapse;
             background-color: var(--white);
             border-radius: 10px;
@@ -163,10 +165,12 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
+        /* ให้ข้อความในตารางตัดคำได้ ไม่ดันตารางกว้างเกินไป */
         th, td {
-            padding: 11px;
+            padding: 10px 8px;
             text-align: left;
             border-bottom: 1px solid #eee;
+            word-break: break-word; /* 👈 บังคับตัดคำยาวๆ ไม่ให้ดันจอพัง */
         }
 
         th {
