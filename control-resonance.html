@@ -251,12 +251,94 @@
 
         /* Footer */
         footer {
-            text-align: center;
-            padding: 30px;
             background-color: var(--dark-navy);
+            color: #94a3b8; /* สีข้อความเทาอ่อนสบายตา */
+            padding: 50px 30px 30px 30px;
+            margin-top: 60px;
+            border-top: 3px solid var(--orange-primary); /* ขีดเส้นส้มด้านบนให้เข้ากับธีม */
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr; /* จัดสัดส่วนความกว้าง 4 คอลัมน์ */
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
             color: var(--white);
-            margin-top: 50px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
             font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--orange-primary);
+            padding-left: 5px; /* ลูกเล่นขยับขวาเวลาเอาเมาส์ชี้ */
+        }
+
+        /* โซเชียลไอคอน (จำลองปุ่มกลมๆ) */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--orange-primary);
+            transform: translateY(-3px);
+        }
+
+        /* ส่วนลิขสิทธิ์ด้านล่างสุด */
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
         }
     </style>
 </head>
@@ -332,7 +414,44 @@
     </div>
 
     <footer>
-        <p>MATAM © 2026 — EXPLORE • PLAY • SHARE</p>
+        <div class="footer-container">
+            
+            <!-- คอลัมน์ที่ 1: โลโก้และคำโปรย -->
+            <div class="footer-col">
+                <img src="1.1.png" alt="MATAM Logo" style="height: 35px; margin-bottom: 15px; display: block;">
+                <p>ที่นี่คือ 'MATAM' เราคือพิกัดนำทางที่จะพาคุณไป 'ตามเกม' ทุกมิติ! ตั้งแต่รีวิวไอเทม อัปเดตข่าวสาร ตามสไตล์ 'มาตาม'</p>
+                <!-- ไอคอนโซเชียล (เปลี่ยนลิงก์ Facebook ของบอสใส่ได้เลย) -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/matammegame" target="_blank" class="social-btn">
+                        <img src="icon-fb.png" alt="Facebook" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                    
+                    <a href="https://www.tiktok.com/@matam.game?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn">
+                        <img src="icon-tt.png" alt="TikTok" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- คอลัมน์ที่ 2: เนื้อหา/เมนู -->
+            <div class="footer-col">
+                <h4>ข้อมูล</h4>
+                <ul>
+                    <li><a href="index.html">เกม</a></li>
+                    <li><a href="review.html">รีวิว</a></li>
+                    <li><a href="article.html">บทความ</a></li>
+                    <li><a href="calendar.html">ปฏิทินเกม</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- คอลัมน์ที่ 4: ติดต่อเรา -->
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p>matam.me.game@gmail.com</p>
+            </div>
+
+        </div>
+
     </footer>
 
 </body>
