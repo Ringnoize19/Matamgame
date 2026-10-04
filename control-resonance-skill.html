@@ -204,6 +204,25 @@
             white-space: nowrap;   /* 👈 คำสั่งบังคับห้ามตัดบรรทัดเด็ดขาด อยู่บรรทัดเดียวกันยาวไปเลย */
         }
 
+        /* สไตล์ปุ่มสารบัญ */
+        .toc-btn {
+            display: inline-block;
+            background-color: var(--bg-cream);
+            color: var(--dark-navy);
+            padding: 6px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .toc-btn:hover {
+            background-color: var(--orange-primary);
+            color: var(--white);
+        }
+
         /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
         @media screen and (max-width: 768px) {
             /* 1. สลับเลย์เอาต์จากซ้าย-ขวา ให้เรียงบน-ล่างแนวตั้ง */
@@ -346,15 +365,63 @@
         <!-- ใช้ .main-layout ครอบฝั่งซ้าย (ตารางเนื้อหา) และฝั่งขวา (โฆษณา) -->
         <div class="main-layout">
 
-            <!-- ฝั่งซ้าย: เนื้อหาและตารางสกิล -->
             <div class="content-area">
-                <h2>ระบบ Talents & สกิลความสามารถ</h2>
+                <h2>แปล Skill Tree และ Abilities</h2>
+                <div class="intro-box">
+                    <p><strong>Control Resonant</strong> มอบพลังเหนือธรรมชาติมากมายให้กับตัวละครเอก Dylan ทั้ง Combat Abilities, Talents, อาวุธ Primary Forms, อาวุธ Secondary Forms และท่าปิดฉาก Combo Finishers โดยทั้งหมดนี้เราได้รวบรวมมาไว้ที่นี่แล้ว</p>
+                </div>
+                
+            <!-- สารบัญปุ่มลัด (คลิกแล้วเลื่อนลงไปหาตารางนั้นๆ) -->
+                <div class="toc-box" style="background: var(--white); padding: 15px 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <p style="font-weight: bold; margin-bottom: 10px; color: var(--dark-navy);">📌 สารบัญเนื้อหา (คลิกเพื่อข้ามไปดูตาราง)</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                        <a href="#table-combat" class="toc-btn">1. Combat Abilities</a>
+                        <a href="#table-talents" class="toc-btn">2. Talents</a>
+                        <a href="#table-primary" class="toc-btn">3. Primary Forms</a>
+                        <a href="#table-secondary" class="toc-btn">4. Secondary Forms</a>
+                        <a href="#table-combo" class="toc-btn">5. Combo Finishers</a>
+                    </div>
+                </div>
+
+            <!-- หมวดที่ 1: Combat Abilities -->
+            <div class="content-area">
+                <h2>แปล Combat Ability</h2>
+                <div class="intro-box">
+                    <p><strong>คำอธิบายระบบ Combat Ability:</strong> ความสามารถในการต่อสู้ได้มาจากเอาชนะบอส Resonant ซึ่งอยู่ตามพื้นที่ต่างๆ ในแผนที่ สามารถเลือกได้ว่าจะไปหาบอสตัวไหนก่อนก็ได้</p>
+                </div>
+
+                <h3 id="table-combat" style="margin-top: 30px; margin-bottom: 10px; color: var(--dark-navy);">1. Combat Abilities</h3>
+                <table> <!-- ตารางที่ 1 -->
+                    <thead>
+                        <tr>
+                            <th>Combat Ability</th>
+                            <th>คำอธิบายความสามารถ</th>
+                            <th>ปลดล็อค</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Barrage</strong></td>
+                            <td>ยิงกระสุนใส่เป้าหมายเพื่อทำดาเมจระยะไกล</td>
+                            <td>เอาชนะ Artist Resonant ในช่วงบทนำ Orientation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Volatile Anomaly</strong></td>
+                            <td>เรียกร่างอัญเชิญสามารถกลายเป็นระเบิดได้เมื่อขว้างใส่ศัตรู</td>
+                            <td>เอาชนะ Artist Resonant ในช่วงบทนำ Orientation</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            <!-- หมวดที่ 2: Talents -->
+            <div class="content-area">
+                <h2>แปล Talents</h2>
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
                 </div>
                 
-                <!-- ตาราง 3 ช่องตามบรีฟของบอส -->
-                <table>
+                <h3 id="table-talents" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">2. Talents</h3>
+                <table> <!-- ตารางที่ 2 -->
                     <thead>
                         <tr>
                             <th>Tier</th>
@@ -366,20 +433,19 @@
                         <tr>
                             <td style="text-align: center;"><span class="tier-badge">Tier 1</span></td>
                             <td><strong>Dominance</strong></td>
-                            <td>เพิ่มดาเมจการโจมตีระยะประชิดหลังจากทำ Execution<br>
-                                การโจมตีหลัก/ท่าปิดคอมโบเพิ่มขึ้น +100% และโจมตีรองเพิ่มขึ้น +50%<br>
-                                ศัตรูจะดรอปเลือดเมื่อถูกสังหารด้วยท่า Dominance สถานะจะคงอยู่เป็นเวลา 8 วินาที
+                            <td>หลังจากทำ Execution สำเร็จ การโจมตีหลัก/ท่าปิดคอมโบเพิ่มขึ้น +100% และโจมตีรองเพิ่มขึ้น +50%<br>
+                                ศัตรูจะดรอปเลือดเมื่อถูกสังหารด้วย Dominance สถานะจะคงอยู่เป็นเวลา 8 วินาที
                             </td>
                         </tr>
                         <tr>
                             <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
                             <td><strong>All-Rounder</strong></td>
-                            <td>เพิ่มดาเมจ +5% แลำทำให้ศัตรูเสียหลักจากการโจมตีทุกรูปแบบ</td>
+                            <td>เพิ่มดาเมจ +5% และทำให้ศัตรูเสียหลักจากการโจมตีทุกรูปแบบ</td>
                         </tr>
                         <tr>
                             <td style="text-align: center;"><span class="tier-badge">Tier 2</span></td>
                             <td><strong>Extra Impact</strong></td>
-                            <td>ทำให้ศัตรูเสียหลักเพิ่ม +10% จาก Combat Abilities</td>
+                            <td>ทำให้ศัตรูเสียหลักเพิ่ม +10% จาก Combat Ability</td>
                         </tr>
                         <tr>
                             <td style="text-align: center;"><span class="tier-badge">Tier 3</span></td>
@@ -650,6 +716,93 @@
                             <td style="text-align: center;"><span class="tier-badge">Tier 16</span></td>
                             <td><strong>Extended Dominance</strong></td>
                             <td>เพิ่มระยะเวลาของสถานะ Dominance เป็น 15 วินาที</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <!-- หมวดที่ 3: Primary Forms -->
+            <div class="content-area">
+                <h2>Primary Forms</h2>
+                <div class="intro-box">
+                    <p><strong>คำอธิบายระบบ Primary Forms:</strong> รูปแบบการโจมตีพื้นฐานที่ต่อสู้ในระยะประชิดเท่านั้น</p>
+                </div>
+                
+                <h3 id="table-primary" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">3. Primary Forms</h3>
+                <table> <!-- ตางรางที่ 3 -->
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>คำอธิบายความสามารถ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cleave</strong></td>
+                            <td>การโจมตีที่สมดุล ทำดาเมจมากขึ้นเมื่อโจมตีจากด้านหลัง</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 1</span>
+                            <a>Dodge Cleave</a>
+                            </td>
+                            <td>กดโจมตีหลังจากกด Dodge สำเร็จ จะทำให้ศัตรูลอยกลางอากาศ เมื่อโจมตีซ้ำจะช่วยฟื้นฟู Power </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            <!-- หมวดที่ 4: Secondary Forms -->
+            <div class="content-area">
+                <h2>Secondary Forms</h2>
+                <div class="intro-box">
+                    <p><strong>คำอธิบายระบบ Secondary Forms:</strong> รูปแบบการโจมตีที่สองสามารถโจมตีได้เฉพาะเจาะจงหรือรุนแรงกว่า เอาไว้เสริมการโจมตีรูปแบบหลัก</p>
+                </div>
+                    
+                <h3 id="table-secondary" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">4. Secondary Forms</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>คำอธิบายความสามารถ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Crush</strong></td>
+                            <td>ค้อนขนาดใหญ่เคลื่อนไหวช้า การทุบอันทรงพลัง</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 1</span>
+                            <a>Force Drive</a>
+                            </td>
+                            <td>เมื่อกดชาร์จจะได้รับดาเมจและอาการชะงักจะลดลง</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- หมวดที่ 5: Combo Finishers -->
+                <div class="content-area">
+                <h2>Combo Finishers</h2>
+                <div class="intro-box">
+                    <p><strong>คำอธิบายระบบ Combo Finishers:</strong> รูปแบบการโจมตีปิดคอมโบเป็นจังหวะสุดท้าย</p>
+                </div>
+                    
+                <h3 id="table-combo" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">5. Combo Finishers</h3>
+                <table> <!-- ตางรางที่ 5 -->
+                    <thead>
+                        <tr>
+                            <th>ชื่อ</th>
+                            <th>คำอธิบายความสามารถ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Concussive Beatdown</strong></td>
+                            <td>ใช้ทำลายท่าตั้งรับหรือทำให้ศัตรูเสียหลัก และมีคุณสมบัติในการโจมตีศัตรูที่อยู่กลางอากาศ</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 1</span>
+                            <a>Drive Mauler</a>
+                            </td>
+                            <td>เพิ่มดาเมจและโอกาสทำให้ศัตรูที่ลอยอยู่เสียหลักมากขึ้น 20%</td>
                         </tr>
                     </tbody>
                 </table>
