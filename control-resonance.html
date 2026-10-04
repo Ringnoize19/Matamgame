@@ -247,11 +247,6 @@
                 object-fit: cover;
                 object-position: center;
             }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
         }
 
         /* Footer */
@@ -344,6 +339,13 @@
             text-align: center;
             font-size: 13px;
             color: #64748b;
+        }
+        /* สำหรับจอมือถือ: ให้ 4 คอลัมน์ยุบลงมาเรียงเป็นแถวเดี่ยวแนวตั้ง */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
     </style>
 </head>
