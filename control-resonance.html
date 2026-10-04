@@ -223,39 +223,27 @@
 
         /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
         @media screen and (max-width: 768px) {
-            .main-layout {
-                flex-direction: column; /* เปลี่ยนทิศทางจากเรียงแถว เป็นเรียงลงมาแนวตั้ง */
+            /* 1. สลับเลย์เอาต์จากเรียงซ้าย-ขวา ให้กลายเป็นเรียงบน-ล่างแนวตั้ง */
+            .home-layout {
+                flex-direction: column; 
                 gap: 20px;
             }
-            
+
+            /* 2. บังคับให้กล่องโฆษณายืดเต็มความกว้างหน้าจอ และอยู่ด้านล่าง */
             .sidebar-ads {
-                width: 100%; /* ให้กล่องโฆษณายืดเต็มความกว้างหน้าจอมือถือ */
-                box-sizing: border-box;
+                width: 100% !important;
+                position: static; /* ปิด sticky บนมือถือเพื่อไม่ให้บังจอ */
             }
 
-            .ad-box {
-                width: 100%;       
-                height: auto;      /* ปล่อยความสูงตามสัดส่วนรูป */
-                padding: 0;
-                border: none;
-            }
-
-            .sidebar-ads img {
-                width: 100% !important;   /* บังคับความกว้างเต็มจอพอดี */
-                max-width: 100% !important; /* ห้ามเกินขอบจอเด็ดขาด */
-                height: auto !important;  /* ให้ความสูงย่อส่วนตามรูปอัตโนมัติ */
-                display: block;
-                margin: 0 auto;
-            }
-
+            /* 3. จัดการการ์ดเกมบนมือถือให้ขนาดพอดี */
             .card {
-                max-width: 200px;
+                max-width: 150px;
                 margin: 0 auto 20px auto;
             }
 
             .card-img {
                 width: 100%;
-                height: 150px;
+                height: 200px;
                 object-fit: cover;
                 object-position: center;
             }
