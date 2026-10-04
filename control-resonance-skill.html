@@ -202,33 +202,36 @@
 
         /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
         @media screen and (max-width: 768px) {
-            /* 👈 เพิ่มบรรทัดนี้เพื่อให้โฆษณาตกลงมาอยู่ด้านล่างบนมือถือ ไม่ทับตาราง */
+            /* 1. สลับเลย์เอาต์จากซ้าย-ขวา ให้เรียงบน-ล่างแนวตั้ง */
             .main-layout {
                 flex-direction: column; 
                 gap: 20px;
             }
             
+            /* 2. ล็อกความกว้าง Sidebar ให้เต็มจอมือถือพอดี */
             .sidebar-ads {
                 width: 100% !important;
-                box-sizing: border-box;
-            }
+                position: static;
 
+            /* 3. กำหนดขนาดกล่องโฆษณาบนมือถือให้สมส่วน (เช่น สูง 250px กำลังสวยครับ) */
             .ad-box {
-                width: 100%;       
-                height: auto;      
+                width: 100% !important;       
+                height: 300px !important; /* 👈 กำหนดความสูงบนมือถือให้พอดี */
                 padding: 0;
                 border: none;
             }
 
+            /* 4. ควบคุมรูปภาพในโฆษณาไม่ให้ยืดผิดสัดส่วน */
             .sidebar-ads img {
                 width: 100% !important;   
                 max-width: 100% !important; 
-                height: auto !important;  
+                height: 100% !important;  
+                object-fit: cover !important;
                 display: block;
                 margin: 0 auto;
             }
         }
-
+        
         /* Footer */
         footer {
             background-color: var(--dark-navy);
