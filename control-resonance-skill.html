@@ -452,10 +452,10 @@
             <div class="content-area" style="margin-top: 40px;">
                 <h2 id="table-combat">1. แปล Combat Ability</h2>
                 <div class="intro-box">
-                    <p><strong>คำอธิบายระบบ Combat Ability:</strong> ความสามารถในการต่อสู้ได้มาจากเอาชนะบอส Resonant ซึ่งอยู่ตามพื้นที่ต่างๆ ในแผนที่ สามารถเลือกได้ว่าจะไปหาบอสตัวไหนก่อนก็ได้</p>
+                    <p><strong>คำอธิบายระบบ Combat Ability:</strong>พลังเหนือธรรมชาติที่ Dylan ใช้เพื่อสร้างความเสียหาย ควบคุม หรือลดทอนกำลังของศัตรูระหว่างการต่อสู้ จะปลดล็อกความสามารถเหล่านี้ได้โดยการเอาชนะบอส Resonant</p>
                 </div>
 
-                <h3 style="margin-top: 30px; margin-bottom: 10px; color: var(--dark-navy);">Combat Abilities</h3>
+                <h3 style="margin-top: 30px; margin-bottom: 10px; color: var(--dark-navy);">Combat Ability</h3>
                 <table id="combat-table"><!-- ตารางที่ 1 -->
                     <thead>
                         <tr>
@@ -517,8 +517,13 @@
                         </tr>
                         <tr>
                             <td><strong>Astral Rebuke</strong></td>
-                            <td>อัญเชิญ Astral Spike เมื่อมันโจมตีทำให้ศัตรูสะสมสถานะ Astralized</td>
+                            <td>ผลักศัตรูให้ลอยขึ้นฟ้าพร้อมทั้งทำให้ศัตรูสะสมสถานะ Astralized</td>
                             <td>เอาชนะ Physicist Resonant ใน Underpass Spire</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Command</strong></td>
+                            <td>เปลี่ยนให้ศัตรูเป็นพวกเดียวกันขณะต่อสู้</td>
+                            <td>เอาชนะ Co-Director Resonant ใน Unknown Field Office</td>
                         </tr>
                     </tbody>
                 </table>
@@ -527,7 +532,7 @@
             <div class="content-area" style="margin-top: 40px;">
                 <h2 id="table-talents">2. แปล Talents</h2>
                 <div class="intro-box">
-                    <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
+                    <p><strong>คำอธิบายระบบ Talents:</strong>ความสามารถพิเศษและเพิ่มพลังการโจมตีให้กับตัวละคร สามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็น Tier ต่างๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
                 </div>
                 
                 <h3 style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">Talents</h3>
@@ -854,7 +859,63 @@
                             <td style="text-align: center;"><span class="tier-badge">Tier 1</span><br>
                             <a>Dodge Cleave</a>
                             </td>
-                            <td>กดโจมตีหลังจากกด Dodge สำเร็จ จะทำให้ศัตรูลอยกลางอากาศ เมื่อโจมตีซ้ำจะช่วยฟื้นฟู Power </td>
+                            <td>กดโจมตีหลังจากกด Dodge สำเร็จ จะทำให้ศัตรูลอยกลางอากาศ เมื่อโจมตีซ้ำจะช่วยฟื้นฟู Power</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 1</span><br>
+                            <a>Powerful Opener</a>
+                            </td>
+                            <td>เพิ่มดาเมจ +20% และทำให้ศัตรูที่ยังไม่ถูกโจมตีเสียหลัก</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 2</span><br>
+                            <a>Eager Carve</a>
+                            </td>
+                            <td>เมื่อโจมตีศัตรูที่ถูกยกลอยเพิ่มดาเมจและโอกาสเสียหลัก +20%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 2</span><br>
+                            <a>Lethal Gain</a>
+                            </td>
+                            <td>สังหารศัตรูด้วยการโจมตีระยะประชิดจะช่วยฟื้นฟู Power</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 3</span><br>
+                            <a>Strong Follow-Up</a>
+                            </td>
+                            <td>สังหารศัตรูด้วย Cleave หรือ Combo Finisher จะได้รับสถานะ Fortified<br>
+                                ลดดาเมจที่ได้รับลง 20% เป็นเวลาสั้นๆ
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 3</span><br>
+                            <a>Total Command</a>
+                            </td>
+                            <td>ขณะอยู่ในสถานะ Dominance จะเพิ่มดาเมจและทำให้ศัตรูเสียหลัก +25%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 4</span><br>
+                            <a>Aerial Recovery</a>
+                            </td>
+                            <td>เมื่อโจมตีศัตรูที่ลอยอยู่จะเพิ่ม Power +25%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 4</span><br>
+                            <a>Prime State</a>
+                            </td>
+                            <td>เมื่อ HP เต็มจะเพิ่มดาเมจและทำให้ศัตรูเสียหลัก +50%</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 5</span><br>
+                            <a>Sky-High Finisher</a>
+                            </td>
+                            <td>Combo Finishers ทำดาเมจเพิ่มขึ้น 20% และทำให้ศัตรูที่ลอยอยู่เสียหลัก</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="tier-badge">Tier 5</span><br>
+                            <a>Lift Shock</a>
+                            </td>
+                            <td>เมื่อกด Dodge Attack สำเร็จจะยกศัตรูประเภท Drone ลอยขึ้นฟ้า</td>
                         </tr>
                     </tbody>
                 </table>
