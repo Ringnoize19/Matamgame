@@ -165,6 +165,20 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
+        table tr th:nth-child(3):last-child, 
+        table tr td:nth-child(3):last-child {
+            width: 50%; /* ช่องคำอธิบายตาราง 3 คอลัมน์ */
+        }
+
+        table:has(th:nth-child(2):last-child) th:nth-child(1),
+        table:has(th:nth-child(2):last-child) td:nth-child(1) {
+            width: 30% !important; /* ช่องชื่อ / Type */
+        }
+        table:has(th:nth-child(2):last-child) th:nth-child(2),
+        table:has(th:nth-child(2):last-child) td:nth-child(2) {
+            width: 70% !important; /* ช่องคำอธิบาย */
+        }
+
         /* ให้ข้อความในตารางตัดคำได้ ไม่ดันตารางกว้างเกินไป */
         th, td {
             padding: 10px 8px;
@@ -384,13 +398,13 @@
                 </div>
 
             <!-- หมวดที่ 1: Combat Abilities -->
-            <div class="content-area">
-                <h2>แปล Combat Ability</h2>
+            <div class="content-area" style="margin-top: 40px;">
+                <h2 id="table-primary">1. แปล Combat Ability</h2>
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Combat Ability:</strong> ความสามารถในการต่อสู้ได้มาจากเอาชนะบอส Resonant ซึ่งอยู่ตามพื้นที่ต่างๆ ในแผนที่ สามารถเลือกได้ว่าจะไปหาบอสตัวไหนก่อนก็ได้</p>
                 </div>
 
-                <h3 id="table-combat" style="margin-top: 30px; margin-bottom: 10px; color: var(--dark-navy);">1. Combat Abilities</h3>
+                <h3 id="table-combat" style="margin-top: 30px; margin-bottom: 10px; color: var(--dark-navy);">Combat Abilities</h3>
                 <table> <!-- ตารางที่ 1 -->
                     <thead>
                         <tr>
@@ -414,13 +428,13 @@
                 </table>
                 
             <!-- หมวดที่ 2: Talents -->
-            <div class="content-area">
-                <h2>แปล Talents</h2>
+            <div class="content-area" style="margin-top: 40px;">
+                <h2 id="table-primary">2. แปล Talents</h2>
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
                 </div>
                 
-                <h3 id="table-talents" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">2. Talents</h3>
+                <h3 id="table-talents" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">Talents</h3>
                 <table> <!-- ตารางที่ 2 -->
                     <thead>
                         <tr>
@@ -721,13 +735,13 @@
                 </table>
 
             <!-- หมวดที่ 3: Primary Forms -->
-            <div class="content-area">
-                <h2>Primary Forms</h2>
+            <div class="content-area" style="margin-top: 40px;">
+                <h2 id="table-primary">3. แปล Primary Forms</h2>
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Primary Forms:</strong> รูปแบบการโจมตีพื้นฐานที่ต่อสู้ในระยะประชิดเท่านั้น</p>
                 </div>
                 
-                <h3 id="table-primary" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">3. Primary Forms</h3>
+                <h3 style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">Primary Forms</h3>
                 <table> <!-- ตางรางที่ 3 -->
                     <thead>
                         <tr>
@@ -750,13 +764,13 @@
                 </table>
 
             <!-- หมวดที่ 4: Secondary Forms -->
-            <div class="content-area">
-                <h2>Secondary Forms</h2>
+            <div class="content-area" style="margin-top: 40px;">
+                <h2 id="table-secondary">4. แปล Secondary Forms</h2>
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Secondary Forms:</strong> รูปแบบการโจมตีที่สองสามารถโจมตีได้เฉพาะเจาะจงหรือรุนแรงกว่า เอาไว้เสริมการโจมตีรูปแบบหลัก</p>
                 </div>
                     
-                <h3 id="table-secondary" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">4. Secondary Forms</h3>
+                <h3 style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">Secondary Forms</h3>
                 <table>
                     <thead>
                         <tr>
@@ -779,13 +793,13 @@
                 </table>
 
                 <!-- หมวดที่ 5: Combo Finishers -->
-                <div class="content-area">
-                <h2>Combo Finishers</h2>
+                <div class="content-area" style="margin-top: 40px;">
+                <h2 id="table-combo">5. แปล Combo Finishers</h2>
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Combo Finishers:</strong> รูปแบบการโจมตีปิดคอมโบเป็นจังหวะสุดท้าย</p>
                 </div>
                     
-                <h3 id="table-combo" style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">5. Combo Finishers</h3>
+                <h3 style="margin-top: 40px; margin-bottom: 10px; color: var(--dark-navy);">Combo Finishers</h3>
                 <table> <!-- ตางรางที่ 5 -->
                     <thead>
                         <tr>
