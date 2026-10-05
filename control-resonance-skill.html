@@ -154,6 +154,17 @@
         tr:hover { background-color: #faf5f0; }
 
         /* ตารางที่มี 3 คอลัมน์ (ตารางที่ 1 และ 2: Combat & Talents) */
+        table:has(th:nth-child(3)) th:nth-child(1) {
+            width: 5% !important;   /* ให้เท่ากับช่อง td ช่องที่ 1 */
+        }
+        table:has(th:nth-child(3)) th:nth-child(2) {
+            width: 15% !important;  /* ให้เท่ากับช่อง td ช่องที่ 2 */
+        }
+        table:has(th:nth-child(3)) th:nth-child(3) {
+            width: 80% !important;  /* ให้เท่ากับช่อง td ช่องที่ 3 */
+        }
+
+        /* --- 2. สำหรับเนื้อหาในตาราง (td) ของตาราง 3 คอลัมน์ --- */
         table:has(th:nth-child(3)) td:nth-child(1) {
             width: 5% !important;
             text-align: center !important;
