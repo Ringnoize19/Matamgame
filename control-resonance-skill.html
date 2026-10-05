@@ -27,14 +27,11 @@
         }
 
         .logo-img {
-            height: 40px; /* ปรับความสูงของโลโก้ตามใจชอบ */
+            height: 40px;
             width: auto;
             display: block;
         }  
         
-        .logo { font-size: 24px; font-weight: bold; color: var(--white); text-decoration: none; letter-spacing: 2px; }
-        .logo span { color: var(--orange-primary); }
-
         nav a {
             color: var(--white);
             text-decoration: none;
@@ -59,29 +56,14 @@
         }
         .back-btn:hover { text-decoration: underline; }
 
-        /* จัดเลย์เอาต์ให้เนื้อหาอยู่ซ้าย โฆษณาอยู่ขวา */
         .main-layout {
             display: flex;
-            gap: 30px; /* ระยะห่างระหว่างเนื้อหากับโฆษณา */
+            gap: 30px;
             align-items: flex-start;
-        }
-
-        /* จัดเลย์เอาต์หน้าแรกให้แยกซ้าย-ขวาอย่างชัดเจน */
-        .home-layout {
-            display: flex;
-            justify-content: space-between; /* ดันซ้ายสุด ขวาสุดออกจากกัน */
-            align-items: flex-start;
-            gap: 40px; /* 👈 ระยะห่างระหว่างการ์ดเกมกับกล่องโฆษณา (ปรับเลขนี้ให้กว้างขึ้นได้ตามใจชอบเลยครับ) */
-        }
-
-        /* ฝั่งการ์ดเกมด้านซ้ายให้ยืดหยุ่นเต็มที่ */
-        .cards-grid-area {
-            flex: 1;
-            min-width: 0;
         }
 
         .content-area {
-            flex: 1; /* ให้ฝั่งเนื้อหาขยายเต็มพื้นที่ที่เหลือ */
+            flex: 1;
         }
 
         /* กล่อง Sidebar ด้านขวา */
@@ -90,12 +72,11 @@
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
-            gap: 20px; /* ระยะห่างระหว่างกล่องโฆษณาแต่ละตัว */
+            gap: 20px;
             position: sticky;
             top: 20px;
         }
 
-        /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
         .ad-box {
             width: 150px;
             height: 300px;
@@ -108,19 +89,10 @@
             align-items: center;
         }
 
-        /* ควบคุมรูปข้างในให้เต็มกรอบพอดี */
-        .ad-box img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;         /* ทำมุมโค้งมนสวย ๆ */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* ใส่เงาจาง ๆ ให้ดูมีมิติ */
-        }
-
-        /* ควบคุมรูปข้างในให้เต็มกรอบพอดี */
         .ad-box img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* ตัดรูปให้เต็มกรอบสวยๆ ไม่เบี้ยว */
+            object-fit: cover;
             display: block;
         }
 
@@ -131,7 +103,6 @@
             padding: 20px;
         }
         
-        /* หัวข้อหน้าเว็บ */
         h2 { 
             font-size: 26px; 
             margin-bottom: 15px; 
@@ -140,7 +111,6 @@
             color: var(--dark-navy); 
         }
 
-        /* ส่วนอธิบายด้านบน (Intro Box) */
         .intro-box {
             background-color: var(--white);
             padding: 20px;
@@ -153,7 +123,9 @@
         }
         .intro-box p strong { color: var(--dark-navy); }
 
-        /* ตารางแปลสกิล */
+        /* ==========================================
+           ตั้งค่าตาราง (สัดส่วนและจัดตำแหน่ง)
+           ========================================== */
         table {
             width: 100%;
             max-width: 100%;
@@ -171,6 +143,7 @@
             word-break: break-word;
         }
 
+        /* หัวตาราง (th): บังคับแถบสี Dark Navy ให้อยู่ "ตรงกลาง" ตัวอักษรสีขาวเสมอ */
         th {
             background-color: var(--dark-navy) !important;
             color: var(--white) !important;
@@ -180,45 +153,47 @@
 
         tr:hover { background-color: #faf5f0; }
 
+        /* ตารางที่มี 3 คอลัมน์ (ตารางที่ 1 และ 2: Combat & Talents) */
         table:has(th:nth-child(3)) th:nth-child(1), 
         table:has(th:nth-child(3)) td:nth-child(1) {
-            width: 15% !important; /* ช่อง Tier / Ability */
-            text-align: center !important; /* จัดกลาง */
+            width: 15% !important;
+            text-align: center !important;
         }
 
         table:has(th:nth-child(3)) th:nth-child(2), 
         table:has(th:nth-child(3)) td:nth-child(2) {
-            width: 25% !important; /* ช่องชื่อ Talents */
-            text-align: left !important; /* เนื้อหาชิดซ้าย */
+            width: 25% !important;
+            text-align: left !important;
         }
 
         table:has(th:nth-child(3)) th:nth-child(3), 
         table:has(th:nth-child(3)) td:nth-child(3) {
-            width: 60% !important; /* ช่องคำอธิบาย */
-            text-align: left !important; /* เนื้อหาชิดซ้าย */
+            width: 60% !important;
+            text-align: left !important;
         }
 
+        /* ตารางที่มี 2 คอลัมน์ (ตารางที่ 3, 4, 5: Primary, Secondary, Combo) -> บีบช่องแรกให้แคบ 15% เท่าตาราง 1 เป๊ะๆ */
         table:has(th:nth-child(2):last-child) th:nth-child(1), 
         table:has(th:nth-child(2):last-child) td:nth-child(1) {
-            width: 15% !important; /* 👈 บีบช่อง "ชื่อ" ให้แคบลงเท่ากับตารางที่ 1 เป๊ะๆ ไม่กว้างแล้วครับ */
-            text-align: left !important; /* เนื้อหาชิดซ้าย */
+            width: 15% !important;
+            text-align: left !important;
         }
 
         table:has(th:nth-child(2):last-child) th:nth-child(2), 
         table:has(th:nth-child(2):last-child) td:nth-child(2) {
-            width: 85% !important; /* ช่องคำอธิบายขยายกินพื้นที่ที่เหลือเต็มๆ */
-            text-align: left !important; /* เนื้อหาชิดซ้าย */
+            width: 85% !important;
+            text-align: left !important;
         }
 
         .tier-badge {
             background-color: var(--orange-primary);
             color: var(--white);
-            padding: 2px 8px;  /* ลด padding ด้านข้างลงนิดนึงให้พอดีจอมือถือ */
+            padding: 2px 8px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 11px;  /* ลดขนาดฟอนต์ */
+            font-size: 11px;
             display: inline-block;
-            white-space: nowrap;   /* 👈 คำสั่งบังคับห้ามตัดบรรทัดเด็ดขาด อยู่บรรทัดเดียวกันยาวไปเลย */
+            white-space: nowrap;
         }
 
         /* สไตล์ปุ่มสารบัญ */
@@ -240,39 +215,33 @@
             color: var(--white);
         }
 
-        /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
+        /* สำหรับจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
         @media screen and (max-width: 768px) {
-            /* 1. สลับเลย์เอาต์จากซ้าย-ขวา ให้เรียงบน-ล่างแนวตั้ง */
             .main-layout {
                 flex-direction: column; 
                 gap: 20px;
             }
             
-            /* 2. ล็อกความกว้าง Sidebar ให้เต็มจอมือถือพอดี */
             .sidebar-ads {
                 width: 100% !important;
                 position: static;
             }
-            
-            th:nth-child(1), td:nth-child(1) { width: 15%; text-align: center; } /* ช่อง Tier */
-            th:nth-child(2), td:nth-child(2) { width: 35%; } /* 👈 ขยายช่อง 'ชื่อ Talents' ให้กว้างขึ้น ไม่ซ้อนกัน */
-            th:nth-child(3), td:nth-child(3) { width: 50%; } /* ช่องคำอธิบายความสามารถ */
         }
         
         /* Footer */
         footer {
             background-color: var(--dark-navy);
-            color: #94a3b8; /* สีข้อความเทาอ่อนสบายตา */
+            color: #94a3b8;
             padding: 50px 30px 30px 30px;
             margin-top: 60px;
-            border-top: 3px solid var(--orange-primary); /* ขีดเส้นส้มด้านบนให้เข้ากับธีม */
+            border-top: 3px solid var(--orange-primary);
         }
 
         .footer-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr; /* จัดสัดส่วนความกว้าง 4 คอลัมน์ */
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -311,10 +280,9 @@
 
         .footer-col ul li a:hover {
             color: var(--orange-primary);
-            padding-left: 5px; /* ลูกเล่นขยับขวาเวลาเอาเมาส์ชี้ */
+            padding-left: 5px;
         }
 
-        /* โซเชียลไอคอน (จำลองปุ่มกลมๆ) */
         .social-icons {
             display: flex;
             gap: 10px;
@@ -340,7 +308,6 @@
             transform: translateY(-3px);
         }
 
-        /* ส่วนลิขสิทธิ์ด้านล่างสุด */
         .footer-bottom {
             max-width: 1200px;
             margin: 0 auto;
@@ -351,7 +318,6 @@
             color: #64748b;
         }
 
-        /* สำหรับจอมือถือ: ให้ 4 คอลัมน์ยุบลงมาเรียงเป็นแถวเดี่ยวแนวตั้ง */
         @media screen and (max-width: 768px) {
             .footer-container {
                 grid-template-columns: 1fr;
