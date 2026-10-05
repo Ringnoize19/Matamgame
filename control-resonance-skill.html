@@ -156,8 +156,8 @@
         /* ตารางแปลสกิล 3 ช่อง */
         table {
             width: 100%;
-            max-width: 100%; /* 👈 เพิ่มบรรทัดนี้เพื่อกันตารางล้นจอ */
-            table-layout: fixed; /* 👈 บังคับให้ตารางบีบตัวตามสัดส่วน ไม่ดันขอบแตก */
+            max-width: 100%;
+            table-layout: fixed;
             border-collapse: collapse;
             background-color: var(--white);
             border-radius: 10px;
@@ -184,33 +184,32 @@
 
         table:has(th:nth-child(3)) th:nth-child(1), 
         table:has(th:nth-child(3)) td:nth-child(1) {
-            width: 15% !important; /* ช่อง Tier / Combat Ability ให้แคบและพอดี */
-            text-align: center !important; /* จัดกลางสวยๆ */
+            width: 15% !important; /* ช่อง Tier / Combat Ability ช่องแรกแคบและพอดี */
+            text-align: center !important; /* เฉพาะเนื้อหาช่องแรกให้จัดกลาง */
         }
 
         table:has(th:nth-child(3)) th:nth-child(2), 
         table:has(th:nth-child(3)) td:nth-child(2) {
-            width: 25% !important; /* ช่องชื่อ Talents / ช่องที่สอง ให้กว้างกำลังดี ไม่กว้างเกินไป */
-            text-align: left !important;
+            width: 25% !important; /* ช่องชื่อ Talents */
+            text-align: left !important; /* เนื้อหาชิดซ้าย */
         }
 
         table:has(th:nth-child(3)) th:nth-child(3), 
         table:has(th:nth-child(3)) td:nth-child(3) {
-            width: 60% !important; /* เทเทน้ำหนักความกว้างมาให้ช่องคำอธิบายหลัก */
-            text-align: left !important;
+            width: 60% !important; /* ช่องคำอธิบาย */
+            text-align: left !important; /* เนื้อหาชิดซ้าย */
         }
 
-        /* 3. สำหรับตารางที่ 3, 4 และ 5 (ที่มี 2 คอลัมน์: Primary, Secondary, Combo Finishers) */
         table:has(th:nth-child(2):last-child) th:nth-child(1), 
         table:has(th:nth-child(2):last-child) td:nth-child(1) {
-            width: 25% !important; /* ช่องชื่อท่าทางต่างๆ */
-            text-align: left !important;
+            width: 25% !important; /* ช่องชื่อท่าทาง (ปรับให้กว้างเท่าตาราง 1) */
+            text-align: left !important; /* เนื้อหาชิดซ้าย */
         }
 
         table:has(th:nth-child(2):last-child) th:nth-child(2), 
         table:has(th:nth-child(2):last-child) td:nth-child(2) {
-            width: 75% !important; /* ช่องคำอธิบาย */
-            text-align: left !important;
+            width: 75% !important; /* ช่องคำอธิบายกินพื้นที่ที่เหลือ */
+            text-align: left !important; /* เนื้อหาชิดซ้าย */
         }
 
         table th:nth-child(2), table td:nth-child(2) { width: 45% !important; }
@@ -219,7 +218,6 @@
         /* ให้ข้อความในตารางตัดคำได้ ไม่ดันตารางกว้างเกินไป */
         th, td {
             padding: 10px 12px;
-            text-align: left;
             border-bottom: 1px solid #eee;
             word-break: break-word;
         }
@@ -227,7 +225,8 @@
         th {
             background-color: var(--dark-navy);
             color: var(--white);
-            font-weight: 400;
+            font-weight: 500;
+            text-align: center !important; 
         }
 
         /* บังคับช่องคอลัมน์แรก (Tier) ให้กว้างพอดี ไม่ให้ตัวหนังสือเบียดกัน */
