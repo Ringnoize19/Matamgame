@@ -240,16 +240,53 @@
                 width: 100% !important;
                 position: static;
             }
-
-            th, td {
-                padding: 12px 14px !important; /* ลดความอ้วนของขอบช่องตารางลง */
-                font-size: 13px !important;    /* ปรับขนาดฟอนต์ให้พอดีจอมือถือ */
+            
+            /* 1. ปลดล็อกความกว้างเปอร์เซ็นต์เดิมทิ้งในมือถือ ให้มันปรับอิสระ */
+            table th, table td {
+                width: auto !important; 
             }
 
-            /* 2. ถ้ามีป้าย Tier Badge ในมือถือ อยากให้มันกระชับขึ้นด้วย */
+            /* 2. จัดระเบียบช่องตาราง 3 คอลัมน์ (Combat & Talents) ในมือถือ */
+            table:has(th:nth-child(3)) th:nth-child(1),
+            table:has(th:nth-child(3)) td:nth-child(1) {
+                width: 22% !important; /* ให้ช่อง Tier พอดีกับป้ายส้ม */
+                text-align: center !important;
+            }
+            table:has(th:nth-child(3)) th:nth-child(2),
+            table:has(th:nth-child(3)) td:nth-child(2) {
+                width: 38% !important; /* ขยายช่องชื่อ Talents ให้กว้างขึ้น ไม่ให้เบียด */
+                text-align: left !important;
+            }
+            table:has(th:nth-child(3)) th:nth-child(3),
+            table:has(th:nth-child(3)) td:nth-child(3) {
+                width: 40% !important; /* คำอธิบายส่วนที่เหลือ */
+                text-align: left !important;
+            }
+
+            /* 3. จัดระเบียบช่องตาราง 2 คอลัมน์ (Primary, Secondary, Combo) ในมือถือ */
+            table:has(th:nth-child(2):last-child) th:nth-child(1),
+            table:has(th:nth-child(2):last-child) td:nth-child(1) {
+                width: 40% !important; /* ช่องชื่อท่าทางในมือถือให้กว้างพอดี ไม่ตัดคำน่าเกลียด */
+                text-align: left !important;
+            }
+            table:has(th:nth-child(2):last-child) th:nth-child(2),
+            table:has(th:nth-child(2):last-child) td:nth-child(2) {
+                width: 60% !important; /* ช่องคำอธิบาย */
+                text-align: left !important;
+            }
+
+            /* 4. ปรับขนาดฟอนต์และระยะช่องไฟให้เหมาะกับมือถือ */
+            th, td {
+                padding: 10px 8px !important;
+                font-size: 12px !important; /* ลดขนาดตัวอักษรลงนิดนึงให้ไม่ล้น */
+            }
+
             .tier-badge {
-                padding: 1px 6px !important;
+                padding: 2px 5px !important;
                 font-size: 10px !important;
+                display: block; /* ให้ป้าย Tier เด้งขึ้นมาอยู่บรรทัดบนสุดคนเดียวได้เลยถ้าพื้นที่แคบ */
+                width: fit-content;
+                margin-bottom: 3px;
             }
         }
         
