@@ -171,20 +171,20 @@
 
         /* ตารางที่มี 2 คอลัมน์ (ตารางที่ 3, 4, 5: Primary, Secondary, Combo) */
         table:has(th:nth-child(2):last-child) th:nth-child(1) {
-            width: 30% !important; /* 👈 บอสลองปรับตัวเลขตรงนี้ได้เลย (เช่น 25%, 30%, 35%) */
+            width: 20% !important; /* 👈 บอสลองปรับตัวเลขตรงนี้ได้เลย (เช่น 25%, 30%, 35%) */
         }
         table:has(th:nth-child(2):last-child) th:nth-child(2) {
-            width: 70% !important; /* 👈 ช่องคำอธิบาย (บวกกับช่องแรกให้ได้ 100%) */
+            width: 80% !important; /* 👈 ช่องคำอธิบาย (บวกกับช่องแรกให้ได้ 100%) */
         }
 
         /* 2. กำหนดความกว้างของเนื้อหาในตาราง (td) ให้ตรงกัน */
         table:has(th:nth-child(2):last-child) td:nth-child(1) {
-            width: 30% !important; /* 👈 ให้เท่ากับ th ช่องแรก */
+            width: 20% !important; /* 👈 ให้เท่ากับ th ช่องแรก */
             text-align: left !important;
         }
 
         table:has(th:nth-child(2):last-child) td:nth-child(2) {
-            width: 70% !important; /* 👈 ให้เท่ากับ th ช่องที่สอง */
+            width: 80% !important; /* 👈 ให้เท่ากับ th ช่องที่สอง */
             text-align: left !important;
         }
 
