@@ -153,39 +153,37 @@
 
         tr:hover { background-color: #faf5f0; }
 
-        table:has(th:contains("Combat Ability")) th:nth-child(1),
-            table:has(th:contains("Combat Ability")) td:nth-child(1) {
-                width: 10% !important; /* ช่องชื่อ Combat Ability */
-                text-align: left !important;
-            }
-            table:has(th:contains("Combat Ability")) th:nth-child(2),
-            table:has(th:contains("Combat Ability")) td:nth-child(2) {
-                width: 60% !important; /* ช่องคำอธิบายความสามารถ */
-                text-align: left !important;
-            }
-            table:has(th:contains("Combat Ability")) th:nth-child(3),
-            table:has(th:contains("Combat Ability")) td:nth-child(3) {
-                width: 30% !important; /* ช่องปลดล็อค */
-                text-align: left !important;
-            }
+        #combat-table th:nth-child(1),
+        #combat-table td:nth-child(1) {
+            width: 20% !important; /* 👈 บอสปรับสัดส่วนใน PC ตรงนี้ได้เลย */
+            text-align: left !important;
+        }
+        #combat-table th:nth-child(2),
+        #combat-table td:nth-child(2) {
+            width: 55% !important;
+            text-align: left !important;
+        }
+        #combat-table th:nth-child(3),
+        #combat-table td:nth-child(3) {
+            width: 25% !important;
+            text-align: left !important;
+        }
 
-            table:has(th:contains("Tier")) th:nth-child(1),
-            table:has(th:contains("Tier")) td:nth-child(1) {
-                width: 5% !important; /* ช่อง Tier */
-                text-align: center !important;
-            }
-            table:has(th:nth-child(2) >> text="ชื่อ") th:nth-child(2),
-            table:has(th:nth-child(2) >> text="ชื่อ") td:nth-child(2),
-            table:has(th:contains("Tier")) th:nth-child(2),
-            table:has(th:contains("Tier")) td:nth-child(2) {
-                width: 25% !important; /* ช่องชื่อ Talents */
-                text-align: left !important;
-            }
-            table:has(th:contains("Tier")) th:nth-child(3),
-            table:has(th:contains("Tier")) td:nth-child(3) {
-                width: 70% !important; /* ช่องคำอธิบายความสามารถ */
-                text-align: left !important;
-            }
+        #talents-table th:nth-child(1),
+        #talents-table td:nth-child(1) {
+            width: 15% !important; /* 👈 ช่อง Tier บน PC */
+            text-align: center !important;
+        }
+        #talents-table th:nth-child(2),
+        #talents-table td:nth-child(2) {
+            width: 25% !important; /* 👈 ช่องชื่อ Talents บน PC */
+            text-align: left !important;
+        }
+        #talents-table th:nth-child(3),
+        #talents-table td:nth-child(3) {
+            width: 60% !important; /* 👈 ช่องคำอธิบายบน PC */
+            text-align: left !important;
+        }
 
         /* ตารางที่มี 2 คอลัมน์ (ตารางที่ 3, 4, 5: Primary, Secondary, Combo) */
         table:has(th:nth-child(2):last-child) th:nth-child(1) {
@@ -253,37 +251,35 @@
                 width: auto !important; 
             }
 
-            table:has(th:contains("Combat Ability")) th:nth-child(1),
-            table:has(th:contains("Combat Ability")) td:nth-child(1) {
-                width: 10% !important; /* ช่องชื่อ Combat Ability */
+            #combat-table th:nth-child(1),
+            #combat-table td:nth-child(1) {
+                width: 20% !important; /* 👈 บอสปรับสัดส่วนตรงนี้ได้ตามใจชอบเลยครับ */
                 text-align: left !important;
             }
-            table:has(th:contains("Combat Ability")) th:nth-child(2),
-            table:has(th:contains("Combat Ability")) td:nth-child(2) {
-                width: 70% !important; /* ช่องคำอธิบายความสามารถ */
+            #combat-table th:nth-child(2),
+            #combat-table td:nth-child(2) {
+                width: 55% !important;
                 text-align: left !important;
             }
-            table:has(th:contains("Combat Ability")) th:nth-child(3),
-            table:has(th:contains("Combat Ability")) td:nth-child(3) {
-                width: 20% !important; /* ช่องปลดล็อค */
+            #combat-table th:nth-child(3),
+            #combat-table td:nth-child(3) {
+                width: 25% !important;
                 text-align: left !important;
             }
 
-            table:has(th:contains("Tier")) th:nth-child(1),
-            table:has(th:contains("Tier")) td:nth-child(1) {
-                width: 5% !important; /* ช่อง Tier */
+            #talents-table th:nth-child(1),
+            #talents-table td:nth-child(1) {
+                width: 10% !important; /* 👈 ช่อง Tier */
                 text-align: center !important;
             }
-            table:has(th:nth-child(2) >> text="ชื่อ") th:nth-child(2),
-            table:has(th:nth-child(2) >> text="ชื่อ") td:nth-child(2),
-            table:has(th:contains("Tier")) th:nth-child(2),
-            table:has(th:contains("Tier")) td:nth-child(2) {
-                width: 20% !important; /* ช่องชื่อ Talents */
+            #talents-table th:nth-child(2),
+            #talents-table td:nth-child(2) {
+                width: 25% !important; /* 👈 ช่องชื่อ Talents */
                 text-align: left !important;
             }
-            table:has(th:contains("Tier")) th:nth-child(3),
-            table:has(th:contains("Tier")) td:nth-child(3) {
-                width: 75% !important; /* ช่องคำอธิบายความสามารถ */
+            #talents-table th:nth-child(3),
+            #talents-table td:nth-child(3) {
+                width: 65% !important; /* 👈 ช่องคำอธิบาย */
                 text-align: left !important;
             }
 
