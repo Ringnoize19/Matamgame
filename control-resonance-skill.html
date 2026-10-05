@@ -240,6 +240,17 @@
                 width: 100% !important;
                 position: static;
             }
+
+            th, td {
+                padding: 8px 6px !important; /* ลดความอ้วนของขอบช่องตารางลง */
+                font-size: 13px !important;    /* ปรับขนาดฟอนต์ให้พอดีจอมือถือ */
+            }
+
+            /* 2. ถ้ามีป้าย Tier Badge ในมือถือ อยากให้มันกระชับขึ้นด้วย */
+            .tier-badge {
+                padding: 1px 6px !important;
+                font-size: 10px !important;
+            }
         }
         
         /* Footer */
@@ -412,7 +423,7 @@
                 
             <!-- หมวดที่ 2: Talents -->
             <div class="content-area" style="margin-top: 40px;">
-                <h2 id="table-primary">2. แปล Talents</h2>
+                <h2 id="table-talents">2. แปล Talents</h2>
                 <div class="intro-box">
                     <p><strong>คำอธิบายระบบ Talents:</strong> ระบบนี้จะช่วยปลดล็อกความสามารถพิเศษและเพิ่มสเตตัสการโจมตีให้กับตัวละคร ผู้เล่นสามารถเลือกอัปเกรดตามสายการเล่นที่ถนัด โดยแบ่งออกเป็นขั้น (Tier) ต่าง ๆ ตามเงื่อนไขของเลเวลตัวละคร</p>
                 </div>
