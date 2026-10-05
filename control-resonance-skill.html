@@ -154,32 +154,27 @@
         tr:hover { background-color: #faf5f0; }
 
         /* ตารางที่มี 3 คอลัมน์ (ตารางที่ 1 และ 2: Combat & Talents) */
-        table:has(th:nth-child(3)) th:nth-child(1), 
         table:has(th:nth-child(3)) td:nth-child(1) {
             width: 15% !important;
             text-align: center !important;
         }
 
-        table:has(th:nth-child(3)) th:nth-child(2), 
         table:has(th:nth-child(3)) td:nth-child(2) {
             width: 25% !important;
             text-align: left !important;
         }
 
-        table:has(th:nth-child(3)) th:nth-child(3), 
         table:has(th:nth-child(3)) td:nth-child(3) {
             width: 60% !important;
             text-align: left !important;
         }
 
-        /* ตารางที่มี 2 คอลัมน์ (ตารางที่ 3, 4, 5: Primary, Secondary, Combo) -> บีบช่องแรกให้แคบ 15% เท่าตาราง 1 เป๊ะๆ */
-        table:has(th:nth-child(2):last-child) th:nth-child(1), 
+        /* ตารางที่มี 2 คอลัมน์ (ตารางที่ 3, 4, 5: Primary, Secondary, Combo) */
         table:has(th:nth-child(2):last-child) td:nth-child(1) {
             width: 15% !important;
             text-align: left !important;
         }
 
-        table:has(th:nth-child(2):last-child) th:nth-child(2), 
         table:has(th:nth-child(2):last-child) td:nth-child(2) {
             width: 85% !important;
             text-align: left !important;
