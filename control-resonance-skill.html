@@ -153,7 +153,7 @@
         }
         .intro-box p strong { color: var(--dark-navy); }
 
-        /* ตารางแปลสกิล 3 ช่อง */
+        /* ตารางแปลสกิล */
         table {
             width: 100%;
             max-width: 100%;
@@ -165,27 +165,25 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        table th:nth-child(1), 
-        table td:nth-child(1) {
-            width: 25% !important;     /* ขยายความกว้างช่องแรกให้พอดีกับคำยาวๆ */
-            text-align: left !important; /* 👈 สั่งให้ตัวอักษรชิดซ้าย ไม่เอาตรงกลางแล้วครับ */
-            padding-left: 10px !important;
+        th, td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #eee;
+            word-break: break-word;
         }
 
-        table tr th:nth-child(3):last-child, 
-        table tr td:nth-child(3):last-child {
-            width: 50%; /* ช่องคำอธิบายตาราง 3 คอลัมน์ */
+        th {
+            background-color: var(--dark-navy) !important;
+            color: var(--white) !important;
+            font-weight: 500;
+            text-align: center !important; 
         }
 
-        table tr th:nth-last-child(2):first-child ~ th:nth-last-child(1),
-        table tr td:nth-last-child(2):first-child ~ td:nth-last-child(1) {
-            /* กรณีมีแค่ 2 คอลัมน์ ให้ช่องแรกชิดซ้ายเช่นกัน */
-        }
+        tr:hover { background-color: #faf5f0; }
 
         table:has(th:nth-child(3)) th:nth-child(1), 
         table:has(th:nth-child(3)) td:nth-child(1) {
-            width: 15% !important; /* ช่อง Tier / Combat Ability ช่องแรกแคบและพอดี */
-            text-align: center !important; /* เฉพาะเนื้อหาช่องแรกให้จัดกลาง */
+            width: 15% !important; /* ช่อง Tier / Ability */
+            text-align: center !important; /* จัดกลาง */
         }
 
         table:has(th:nth-child(3)) th:nth-child(2), 
@@ -202,46 +200,15 @@
 
         table:has(th:nth-child(2):last-child) th:nth-child(1), 
         table:has(th:nth-child(2):last-child) td:nth-child(1) {
-            width: 25% !important; /* ช่องชื่อท่าทาง (ปรับให้กว้างเท่าตาราง 1) */
+            width: 15% !important; /* 👈 บีบช่อง "ชื่อ" ให้แคบลงเท่ากับตารางที่ 1 เป๊ะๆ ไม่กว้างแล้วครับ */
             text-align: left !important; /* เนื้อหาชิดซ้าย */
         }
 
         table:has(th:nth-child(2):last-child) th:nth-child(2), 
         table:has(th:nth-child(2):last-child) td:nth-child(2) {
-            width: 75% !important; /* ช่องคำอธิบายกินพื้นที่ที่เหลือ */
+            width: 85% !important; /* ช่องคำอธิบายขยายกินพื้นที่ที่เหลือเต็มๆ */
             text-align: left !important; /* เนื้อหาชิดซ้าย */
         }
-
-        table th:nth-child(2), table td:nth-child(2) { width: 45% !important; }
-        table th:nth-child(3), table td:nth-child(3) { width: 30% !important; }
-
-        /* ให้ข้อความในตารางตัดคำได้ ไม่ดันตารางกว้างเกินไป */
-        th, td {
-            padding: 10px 12px;
-            border-bottom: 1px solid #eee;
-            word-break: break-word;
-        }
-
-        th {
-            background-color: var(--dark-navy);
-            color: var(--white);
-            font-weight: 500;
-            text-align: center !important; 
-        }
-
-        /* บังคับช่องคอลัมน์แรก (Tier) ให้กว้างพอดี ไม่ให้ตัวหนังสือเบียดกัน */
-        th:nth-child(1), td:nth-child(1) { 
-            width: 20%; 
-            text-align: center; 
-            padding: 10px 4px; /* ลดขอบซ้ายขวาของช่องตารางลง */
-        }
-
-        /* กำหนดสัดส่วนความกว้างของ 3 ช่อง */
-        th:nth-child(1), td:nth-child(1) { width: 10%; text-align: center; } /* Tier */
-        th:nth-child(2), td:nth-child(2) { width: 13%; } /* ชื่อ Talents */
-        th:nth-child(3), td:nth-child(3) { width: 53%; } /* คำอธิบาย */
-
-        tr:hover { background-color: #faf5f0; }
 
         .tier-badge {
             background-color: var(--orange-primary);
