@@ -246,20 +246,37 @@
                 width: auto !important; 
             }
 
-            /* 2. จัดระเบียบช่องตาราง 3 คอลัมน์ (Combat & Talents) ในมือถือ */
-            table:has(th:nth-child(3)) th:nth-child(1),
-            table:has(th:nth-child(3)) td:nth-child(1) {
-                width: 12% !important; /* ให้ช่อง Tier พอดีกับป้ายส้ม */
-                text-align: center !important;
-            }
-            table:has(th:nth-child(3)) th:nth-child(2),
-            table:has(th:nth-child(3)) td:nth-child(2) {
-                width: 28% !important; /* ขยายช่องชื่อ Talents ให้กว้างขึ้น ไม่ให้เบียด */
+            table:has(th:contains("Combat Ability")) th:nth-child(1),
+            table:has(th:contains("Combat Ability")) td:nth-child(1) {
+                width: 20% !important; /* ช่องชื่อ Combat Ability */
                 text-align: left !important;
             }
-            table:has(th:nth-child(3)) th:nth-child(3),
-            table:has(th:nth-child(3)) td:nth-child(3) {
-                width: 60% !important; /* คำอธิบายส่วนที่เหลือ */
+            table:has(th:contains("Combat Ability")) th:nth-child(2),
+            table:has(th:contains("Combat Ability")) td:nth-child(2) {
+                width: 45% !important; /* ช่องคำอธิบายความสามารถ */
+                text-align: left !important;
+            }
+            table:has(th:contains("Combat Ability")) th:nth-child(3),
+            table:has(th:contains("Combat Ability")) td:nth-child(3) {
+                width: 35% !important; /* ช่องปลดล็อค */
+                text-align: left !important;
+            }
+
+            table:has(th:contains("Tier")) th:nth-child(1),
+            table:has(th:contains("Tier")) td:nth-child(1) {
+                width: 15% !important; /* ช่อง Tier */
+                text-align: center !important;
+            }
+            table:has(th:nth-child(2) >> text="ชื่อ") th:nth-child(2),
+            table:has(th:nth-child(2) >> text="ชื่อ") td:nth-child(2),
+            table:has(th:contains("Tier")) th:nth-child(2),
+            table:has(th:contains("Tier")) td:nth-child(2) {
+                width: 25% !important; /* ช่องชื่อ Talents */
+                text-align: left !important;
+            }
+            table:has(th:contains("Tier")) th:nth-child(3),
+            table:has(th:contains("Tier")) td:nth-child(3) {
+                width: 60% !important; /* ช่องคำอธิบายความสามารถ */
                 text-align: left !important;
             }
 
