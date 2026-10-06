@@ -157,11 +157,12 @@
             text-align: left !important; 
         }
 
-        tr:hover { background-color: #faf5f0; }
+        tr:hover { 
+            background-color: inherit;
+        }
 
-        /* 🔷 [เพิ่มตรงนี้] สลับสีแถวคู่ (Zebra Striping) ด้วยสีครีมของเว็บเรา */
-        tr:nth-child(even) {
-            background-color: var(--bg-cream); /* ใช้ตัวแปร #F4EFEA ที่บอสตั้งไว้ เท่และละมุนมาก */
+        table tbody tr:nth-child(even) {
+            background-color: #FAF7F5; /* 👈 ปรับความอ่อนตรงนี้ตามใจชอบเลยครับ (เช่น #F9F6F0 หรือ #FBF8F5) */
         }
 
         #combat-table th:nth-child(1),
