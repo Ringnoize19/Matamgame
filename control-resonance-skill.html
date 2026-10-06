@@ -159,6 +159,11 @@
 
         tr:hover { background-color: #faf5f0; }
 
+        /* 🔷 [เพิ่มตรงนี้] สลับสีแถวคู่ (Zebra Striping) ด้วยสีครีมของเว็บเรา */
+        tr:nth-child(even) {
+            background-color: var(--bg-cream); /* ใช้ตัวแปร #F4EFEA ที่บอสตั้งไว้ เท่และละมุนมาก */
+        }
+
         #combat-table th:nth-child(1),
         #combat-table td:nth-child(1) {
             width: 20% !important; /* 👈 บอสปรับสัดส่วนใน PC ตรงนี้ได้เลย */
