@@ -170,6 +170,24 @@
             text-decoration: none;
             display: flex;             /* 👈 เพิ่มบรรทัดนี้เพื่อให้การ์ดจัดทรงง่ายขึ้น */
             flex-direction: column;    /* 👈 เรียงเนื้อหาใน1การ์ดจากบนลงล่าง */
+            position: relative;
+        }
+
+        .card-view-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(30, 42, 57, 0.75); /* สีพื้นหลังนาวีเข้มโปร่งแสงนิดๆ อ่านง่าย */
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px); /* เบลอฉากหลังนิดนึงเพื่อความพรีเมียม */
+            z-index: 2; /* ให้อยู่เหนือรูปภาพเสมอ */
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .card-img {
@@ -384,6 +402,7 @@
                 <!-- Grid สำหรับใส่การ์ดเกมอันที่ 1 -->
                 <div class="grid-container">
                     <a href="control-resonance-skill.html" class="card">
+                        <div class="card-view-badge" id="view-count">👁️ กำลังโหลด...</div>
                         <img src="control-resonant-skill.jpg" class="card-img" alt="Control Resonance">
                         <div class="card-content" style="padding: 10px;">
                             <h3 class="card-title">แปล Skill Tree และ Abilities</h3>
@@ -391,6 +410,7 @@
                     </a>
                     <!-- 🔷 การ์ดอันที่ 2  -->
                     <a href="Control-Resonant-trick-tip.html" class="card">
+                        <div class="card-view-badge" id="view-count">👁️ กำลังโหลด...</div>
                         <img src="trick-tip.jpg" class="card-img" alt="Control Resonance">
                         <div class="card-content" style="padding: 10px;">
                             <h3 class="card-title">เทคนิคช่วงต้นเกม</h3>
@@ -431,6 +451,27 @@
         </div>
     </div>
 
+    <script>
+    // ฟังก์ชันเรียก API เพื่อนับและแสดงยอดวิวอัตโนมัติ
+    async function updateViewCount() {
+        try {
+            // เปลี่ยน namespace และ key เป็นชื่อเว็บของบอสได้เลยครับ
+            let response = await fetch('https://api.countapi.xyz/hit/ringnoize19.github.io/trick-tip');
+            let data = await response.json();
+
+            // เอาตัวเลขที่ได้ไปใส่ไว้ในป้ายยอดวิวของเรา
+            document.getElementById('view-count').innerText = '👁️ ' + data.value.toLocaleString();
+        } catch (error) {
+            console.error('Error fetching view count:', error);
+            document.getElementById('view-count').innerText = '👁️ -';
+        }
+    }
+
+    // รันฟังก์ชันทันทีที่โหลดหน้าเว็บเสร็จ
+    updateViewCount();
+</script>
+
+    
     <footer>
         <div class="footer-container">
             
