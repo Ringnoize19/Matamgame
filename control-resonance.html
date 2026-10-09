@@ -168,20 +168,21 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
-            text-decoration: none; /* 👈 เพิ่มบรรทัดนี้เพื่อสั่งปิดเส้นใต้ครับ */
+            text-decoration: none;
+            display: flex;             /* 👈 เพิ่มบรรทัดนี้เพื่อให้การ์ดจัดทรงง่ายขึ้น */
+            flex-direction: column;    /* 👈 เรียงเนื้อหาใน1การ์ดจากบนลงล่าง */
+        }
+
+        .card-img {
+            width: 100%;
+            height: 150px;             /* 👈 ล็อกความสูงรูปให้เท่ากันทุกการ์ดเป๊ะๆ */
+            object-fit: cover;         /* 👈 ตัดรูปส่วนเกินออกให้อัตโนมัติ รูปไม่เบี้ยว */
+            object-position: center;
         }
 
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(255, 106, 0, 0.15);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 150px;
-            background-color: var(--white);
-            object-fit: cover;
-            object-position: center;
         }
 
         .card-content {
@@ -221,30 +222,34 @@
             border-top: 1px solid #eee;
             padding-top: 10px;
         }
-
-        /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
+        
+        /* มือถือ */ 
         @media screen and (max-width: 768px) {
-            /* 1. สลับเลย์เอาต์จากเรียงซ้าย-ขวา ให้กลายเป็นเรียงบน-ล่างแนวตั้ง */
             .home-layout {
                 flex-direction: column; 
                 gap: 20px;
             }
 
-            /* 2. บังคับให้กล่องโฆษณายืดเต็มความกว้างหน้าจอ และอยู่ด้านล่าง */
             .sidebar-ads {
                 width: 100% !important;
-                position: static; /* ปิด sticky บนมือถือเพื่อไม่ให้บังจอ */
+                position: static;
             }
 
-            /* 3. จัดการการ์ดเกมบนมือถือให้ขนาดพอดี */
+            /* 🔷 ปรับ Grid การ์ดบนมือถือให้แสดงผล 2 คอลัมน์ขนาดเท่ากันเป๊ะ */
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr) !important; /* บังคับแบ่งเป็น 2 ช่องเท่ากัน */
+                gap: 15px;
+            }
+
+            /* 🛑 เอา max-width: 200px และ margin auto ออก เพื่อให้ Grid จัดการความกว้างให้เต็มช่องพอดี */
             .card {
-                max-width: 200px;
-                margin: 0 auto 20px auto;
+                max-width: none; 
+                margin: 0;
             }
 
             .card-img {
                 width: 100%;
-                height: 150px;
+                height: 120px; /* ลดความสูงลงนิดนึงบนมือถือ เพื่อให้สัดส่วนสวยงามกำลังดี */
                 object-fit: cover;
                 object-position: center;
             }
