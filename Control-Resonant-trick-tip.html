@@ -120,10 +120,14 @@
 
         .article-img {
             width: 100%;
-            max-height: 450px;
-            object-fit: cover;
+            max-height: 500px;         /* ปรับความสูงสูงสุดได้ตามชอบ */
+            object-fit: contain;       /* 👈 โชว์รูปเต็มใบ 100% ไม่มีการตัดขอบทิ้ง */
+            background-color: #f8fafc; /* สีพื้นหลังรอบรูปกรณีรูปไม่เต็มกล่อง */
             border-radius: 8px;
             margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;        /* จัดรูปให้อยู่กึ่งกลางเป๊ะๆ */
         }
 
         /* กล่อง Sidebar ด้านขวา */
