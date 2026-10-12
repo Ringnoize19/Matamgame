@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATAM - EXPLORE • PLAY • SHARE</title>
+    <style>
+        /* Palette สีประจำแบรนด์ MATAM */
+        :root {
+            --orange-primary: #FF6A00;
+            --dark-navy: #1E2A39;
+            --bg-cream: #F4EFEA;
+            --white: #FFFFFF;
+            --gray-text: #5A6578;
+        }
+
+        .logo-img {
+            height: 40px; /* ปรับความสูงของโลโก้ตามใจชอบ */
+            width: auto;
+            display: block;
+        }    
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--dark-navy);
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--orange-primary);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--orange-primary);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--orange-primary);
+            padding-left: 10px;
+            color: var(--dark-navy);
+        }
+
+        /* Grid การ์ดสไตล์ Game Guide / Blog */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            text-decoration: none; /* 👈 เพิ่มบรรทัดนี้เพื่อสั่งปิดเส้นใต้ครับ */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 106, 0, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 300px;
+            background-color: var(--white);
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 2px;
+        }
+
+        .card-badge {
+            display: inline-block;
+            background-color: var(--orange-primary);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--dark-navy);
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--gray-text);
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--gray-text);
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--dark-navy);
+            color: var(--white);
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="#" class="logo-link">
+    <img src="1.1.png" alt="MATAM Logo" class="logo-img">
+</a>
+        <nav>
+            <a href="#" class="active">เกม</a>
+            <a href="#">รีวิว</a>
+            <a href="#">บทความ</a>
+            <a href="#">ไกด์</a>
+            <a href="#">ปฏิทินเกม</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <h2 class="section-title">รายชื่อเกม</h2>
+
+        <!-- Grid สำหรับใส่การ์ดเกม -->
+        <div class="grid-container">
+            
+            <!-- การ์ดเกม: Control Resonance (กดแล้วลิงก์ไปอีกหน้า) -->
+            <a href="control-resonance.html" class="card">
+                <div class="card">
+                    <!-- รูปภาพปกเกม: เปลี่ยนลิงก์รูปภาพตรง src ตามต้องการ -->
+                    <img src="Control Resonant.jpg" class="card-img" alt="Control Resonance">
+                    <div class="card-content">
+                        <h3 class="card-title">Control Resonance</h3>
+                    </div>
+                </div>
+            </a>
+
+          </div>
+   
+    </div>
+
+    <footer>
+        <p>MATAM © 2026 — EXPLORE • PLAY • SHARE</p>
+    </footer>
+
+</body>
+</html>
+
