@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BRCJDEEQE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5BRCJDEEQE');
+    </script>
+    
+    <meta name="google-site-verification" content="LhjbDGXv7oVLM0hHAXuDDPfipPN-jUSsu4bBxZSlBj4" />
+    <link rel="icon" type="image/png" href="image/index/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATAM - EXPLORE • PLAY • SHARE</title>
+    <style>
+        /* Palette สีประจำแบรนด์ MATAM */
+        :root {
+            --orange-primary: #FF6A00;
+            --dark-navy: #1E2A39;
+            --bg-cream: #F4EFEA;
+            --white: #FFFFFF;
+            --gray-text: #5A6578;
+        }
+
+        .logo-img {
+            height: 40px; /* ปรับความสูงของโลโก้ตามใจชอบ */
+            width: auto;
+            display: block;
+        }    
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--dark-navy);
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--white);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--orange-primary);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--orange-primary);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--orange-primary); /* ขีดส้มจะอยู่แค่ความสูงของตัวหนังสือ h2 เป๊ะๆ */
+            padding-left: 10px;
+            color: var(--dark-navy);
+            height: auto; /* ป้องกันไม่ให้มันยืด */
+            display: inline-block; /* 👈 บังคับให้กรอบความสูงเท่ากับตัวหนังสือพอดี ไม่ลากยาว */
+        }
+
+        /* Grid การ์ดสไตล์ Game Guide / Blog */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            text-decoration: none; /* 👈 เพิ่มบรรทัดนี้เพื่อสั่งปิดเส้นใต้ครับ */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 106, 0, 0.15);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 300px;
+            background-color: var(--white);
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 2px;
+        }
+
+        .card-badge {
+            display: inline-block;
+            background-color: var(--orange-primary);
+            color: var(--white);
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--dark-navy);
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--gray-text);
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--gray-text);
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-navy);
+            color: #94a3b8; /* สีข้อความเทาอ่อนสบายตา */
+            padding: 50px 30px 30px 30px;
+            margin-top: 60px;
+            border-top: 3px solid var(--orange-primary); /* ขีดเส้นส้มด้านบนให้เข้ากับธีม */
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr; /* จัดสัดส่วนความกว้าง 4 คอลัมน์ */
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--orange-primary);
+            padding-left: 5px; /* ลูกเล่นขยับขวาเวลาเอาเมาส์ชี้ */
+        }
+
+        /* โซเชียลไอคอน (จำลองปุ่มกลมๆ) */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--orange-primary);
+            transform: translateY(-3px);
+        }
+
+        /* ส่วนลิขสิทธิ์ด้านล่างสุด */
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        /* สำหรับจอมือถือ: ให้ 4 คอลัมน์ยุบลงมาเรียงเป็นแถวเดี่ยวแนวตั้ง */
+        @media screen and (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* กล่อง Sidebar ด้านขวา */
+        .sidebar-ads {
+            width: 150px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px; /* ระยะห่างระหว่างกล่องโฆษณาแต่ละตัว */
+            position: sticky;
+            top: 20px;
+        }
+
+        /* หน้าตากล่องโฆษณาจำลอง (เผื่อไว้ใส่รูปแบนเนอร์หรือโค้ดโฆษณาจริง) */
+        .ad-box {
+            width: 150px;
+            height: 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* ควบคุมรูปข้างในให้เต็มกรอบพอดี */
+        .ad-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ตัดรูปให้เต็มกรอบสวยๆ ไม่เบี้ยว */
+            display: block;
+        }
+
+        .ad-placeholder {
+            border: 2px dashed #cbd5e1;
+            background-color: #fafaf9;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* จัดเลย์เอาต์หน้าแรกให้แยกซ้าย-ขวาอย่างชัดเจน */
+        .home-layout {
+            display: flex;
+            justify-content: space-between; /* ดันซ้ายสุด ขวาสุดออกจากกัน */
+            align-items: flex-start;
+            gap: 40px; /* 👈 ระยะห่างระหว่างการ์ดเกมกับกล่องโฆษณา (ปรับเลขนี้ให้กว้างขึ้นได้ตามใจชอบเลยครับ) */
+        }
+
+        /* ฝั่งการ์ดเกมด้านซ้ายให้ยืดหยุ่นเต็มที่ */
+        .cards-grid-area {
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* สำหรับหน้าจอมือถือ (ความกว้างหน้าจอไม่เกิน 768px) */
+        @media screen and (max-width: 768px) {
+            /* 1. สลับเลย์เอาต์จากเรียงซ้าย-ขวา ให้กลายเป็นเรียงบน-ล่างแนวตั้ง */
+            .home-layout {
+                flex-direction: column; 
+                gap: 20px;
+            }
+
+            /* 2. บังคับให้กล่องโฆษณายืดเต็มความกว้างหน้าจอ และอยู่ด้านล่าง */
+            .sidebar-ads {
+                width: 100% !important;
+                position: static; /* ปิด sticky บนมือถือเพื่อไม่ให้บังจอ */
+            }
+
+            /* 3. จัดการการ์ดเกมบนมือถือให้ขนาดพอดี */
+            .card {
+                max-width: 150px;
+                margin: 0 auto 20px auto;
+            }
+
+            .card-img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="index.html" class="logo-link"> <!-- 👈 ลิงก์กลับหน้าจอหลัก -->
+    <img src="image/index/1.1.png" alt="MATAM Logo" class="logo-img">
+</a>
+        <nav>
+            <a href="index.html">เกม</a>
+            <a href="review.html">รีวิว</a>
+            <a href="article.html">บทความ</a>
+            <a href="index.html">ไกด์</a>
+            <a href="calendar.html">ปฏิทินเกม</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        
+        <!-- กล่องครอบหลัก: บังคับแบ่งฝั่งซ้าย (การ์ดเกม) และขวา (โฆษณา) -->
+        <div class="home-layout">
+
+            <!-- ฝั่งซ้าย: พื้นที่แสดงการ์ดเกมทั้งหมด -->
+            <div class="cards-grid-area">
+                <h2 class="section-title">รายชื่อเกม</h2>
+
+                <!-- Grid สำหรับใส่การ์ดเกม -->
+                <div class="grid-container">
+                    <a href="Control-Resonant/control-resonance.html" class="card">
+                        <img src="image/Control-Resonant/Control Resonant.jpg" class="card-img" alt="Control Resonance">
+                        <div class="card-content" style="padding: 10px;">
+                            <h3 class="card-title">Control Resonance</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- ฝั่งขวา: โฆษณา 3 ตัวเรียงลงมา -->
+            <aside class="sidebar-ads">
+                
+                <!-- ตัวที่ 1: รูปแบนเนอร์และลิงก์เดิม -->
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/aariday8" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="image/sponser/Ari.day8.jpg" alt="Ads 1">
+                    </a>
+                </div>
+
+                <!-- ตัวที่ 2: มีรูปและลิงก์ตัวที่ 2 (เปลี่ยนลิงก์และชื่อรูปทีหลังได้ครับ) -->
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/RoboCodCenterRobot" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="image/sponser/RoboCod.jpg" alt="Ads 2">
+                    </a>
+                </div>
+
+                <!-- ตัวที่ 3: กรอบเส้นประ "พื้นที่โฆษณา" ขนาด 200x400 -->
+                <div class="ad-box ad-placeholder">
+                    <div>
+                        <p style="color: var(--gray-text); font-size: 14px; font-weight: bold; line-height: 1.5; margin: 0;">
+                            ✨ พื้นที่โฆษณา<br>
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: normal;">(ขนาด 200 x 400 px)<br>สนใจติดต่อลงโฆษณา</span>
+                        </p>
+                    </div>
+                </div>
+
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            
+            <!-- คอลัมน์ที่ 1: โลโก้และคำโปรย -->
+            <div class="footer-col">
+                <img src="image/index/1.1.png" alt="MATAM Logo" style="height: 35px; margin-bottom: 15px; display: block;">
+                <p>ที่นี่คือ 'MATAM' เราคือพิกัดนำทางที่จะพาคุณไป 'ตามเกม' ทุกมิติ! ตั้งแต่รีวิวไอเทม อัปเดตข่าวสาร ตามสไตล์ 'มาตาม'</p>
+                <!-- ไอคอนโซเชียล (เปลี่ยนลิงก์ Facebook ของบอสใส่ได้เลย) -->
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/matammegame" target="_blank" class="social-btn">
+                        <img src="image/index/icon-fb.png" alt="Facebook" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                    
+                    <a href="https://www.tiktok.com/@matam.game?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn">
+                        <img src="image/index/icon-tt.png" alt="TikTok" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                </div>
+            </div>
+
+            <!-- คอลัมน์ที่ 2: เนื้อหา/เมนู -->
+            <div class="footer-col">
+                <h4>ข้อมูล</h4>
+                <ul>
+                    <li><a href="index.html">เกม</a></li>
+                    <li><a href="review.html">รีวิว</a></li>
+                    <li><a href="article.html">บทความ</a></li>
+                    <li><a href="calendar.html">ปฏิทินเกม</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- คอลัมน์ที่ 4: ติดต่อเรา -->
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p>matam.me.game@gmail.com</p>
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
