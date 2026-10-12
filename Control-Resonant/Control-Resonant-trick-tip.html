@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BRCJDEEQE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5BRCJDEEQE');
+    </script>
+    
+    <link rel="icon" type="image/png" href="image/index/favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เทคนิคช่วงต้นเกม - MATAM</title>
+    <style>
+        /* Palette สีประจำแบรนด์ MATAM */
+        :root {
+            --orange-primary: #FF6A00;
+            --dark-navy: #1E2A39;
+            --bg-cream: #F4EFEA;
+            --white: #FFFFFF;
+            --gray-text: #5A6578;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }    
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--dark-navy);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--orange-primary);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .back-btn { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            color: var(--orange-primary); 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
+        /* จัดเลย์เอาต์หน้าบทความ: ซ้ายเนื้อหา ขวาโฆษณา */
+        .main-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .content-area {
+            flex: 1;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-width: 0;
+        }
+
+        .article-title {
+            font-size: 26px;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .article-date {
+            font-size: 13px;
+            color: var(--gray-text);
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .content-area h2 {
+            font-size: 20px;
+            color: var(--dark-navy);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--orange-primary);
+            padding-left: 10px;
+        }
+
+        .content-area p {
+            margin-bottom: 15px;
+            color: var(--gray-text);
+            font-size: 15px;
+        }
+
+        .article-img {
+            width: 100%;
+            max-height: 500px;         /* ปรับความสูงสูงสุดได้ตามชอบ */
+            object-fit: contain;       /* 👈 โชว์รูปเต็มใบ 100% ไม่มีการตัดขอบทิ้ง */
+            background-color: #f8fafc; /* สีพื้นหลังรอบรูปกรณีรูปไม่เต็มกล่อง */
+            border-radius: 8px;
+            margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;        /* จัดรูปให้อยู่กึ่งกลางเป๊ะๆ */
+        }
+
+        /* กล่อง Sidebar ด้านขวา */
+        .sidebar-ads {
+            width: 150px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .ad-box {
+            width: 150px;
+            height: 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* สำหรับจอมือถือ */
+        @media screen and (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            .sidebar-ads {
+                width: 100% !important;
+                position: static;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-navy);
+            color: #94a3b8;
+            padding: 50px 30px 30px 30px;
+            margin-top: 60px;
+            border-top: 3px solid var(--orange-primary);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--orange-primary);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--orange-primary);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="image/index/1.1.png" alt="MATAM Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html">เกม</a>
+            <a href="review.html">รีวิว</a>
+            <a href="article.html">บทความ</a>
+            <a href="index.html" class="active">ไกด์</a>
+            <a href="calendar.html">ปฏิทินเกม</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <a href="control-resonance.html" class="back-btn">← กลับสู่หน้าหลักเกม Control Resonance</a>
+
+        <!-- Layout เนื้อหาคู่กับโฆษณา -->
+        <div class="main-layout">
+            
+            <!-- ฝั่งซ้าย: เนื้อหาบทความ -->
+            <div class="content-area">
+                <h1 class="article-title">เทคนิคช่วงต้นเกม</h1>
+                <div class="article-date">อัปเดตเมื่อ: ตุลาคม 2026 • หมวดหมู่: ไกด์</div>
+
+                <p>ผ่านมาหลายวันแล้ว คงเริ่มมีคนเล่นกันไปบ้างแล้ว ไม่รู้ว่าเจอปัญหาเดียวกันกันตั้มไหม ระบบอะไรว่ะเนี่ย! เยอะแยะไปหมด<br>
+                    ไม่ใช่ว่าเยอะเพราะเป็นภาคต่อนะ มันเยอะเพราะเป็น Dylan เนี่ยแหละ เปลี่ยนรูปแบบจากการโจมตีระยะไกลเป็นระยะใกล้ทั้งหมด คอมโบอย่างเดือด แมคคานิคจะค่อยๆ เพิ่มจนเวียนหัว 🤣🤣🤣 แต่โคตรสนุก<br>
+                    ตั้มเลยคิดว่าเอาเทคนิคส่วนตัวมาแบ่งปันผู้ร่วมชะตากรรมดีกว่ามาเริ่มกันที่</p>
+
+                <img src="image/Control-Resonant/trick-tip.jpg" alt="Trick and Tip" class="article-img">
+
+                <h2>1. อาวุธ Aberrant</h2>
+                <p>ภายในเกมมีทั้งอาวุธหลักและอาวุธรองให้เลือกใช้<br>
+                    - อาวุธหลัก แนะนำดาบสองมือ Strike ที่โจมตีได้รวดเร็วมีโอกาสติดคริติคอลสูง<br>
+                    - อาวุธรอง Crush จะแต่ต่างจากอาวุธหลักอย่างสิ้นเชิงเอาไว้แก้ทางพวกมอนตัวใหญ่ รูปร่างคล้ายค้อนขนาดใหญ่เคลื่อนไหวช้า แต่มีการทุบที่ทรงพลัง</p>
+
+                <h2>2. เพิ่มเลเวล</h2>
+                <p>ฮั่นแน่! กำลังจะใส่เลยใช่ไหม เข้าใจครับว่า Dylan ไม่มีเลเวลแต่อยากจะขอเรียกให้มันง่ายๆ จะได้เข้าใจตรงกัน<br>
+                    ภายในเกมไม่มีเลเวลตัวละครโดยตรงแต่จะเป็นการอัพเลเวลในแต่พื้นที่แทน อย่างเช่น ถ้าเล่นมินิเกมผ่านเลเวลพื้นที่จาก 1 จะกลายเป็น 2<br>
+                    Dylan ก็จะได้รับ 1 แต้ม นำไปอัพ Ability ได้ ดังนั้นแนะนำให้แวะทำเควสย่อยก่อนแล้วค่อยไปเล่นตามเนื้อเรื่อง จะเล่นได้ง่ายขึ้น</p>
+
+                <h2>3. ปลดล็อคความสามารถ</h2>
+                <p>ทุกครั้งที่เควสของ Jesse แจ้งเตือน ให้รีบทำทันทีมันจะช่วยให้ Dylan เคลื่อนที่ได้อย่างอิสระ สามารถไปในที่ที่เราคาดไม่ถึง ไปได้ทั้งที่สูง แนวดิ่ง แนวกลับหัว สายสำรวจต้องชอบมากแน่ๆ</p>
+
+                <h2>4. เก็บกล่องอัปเกรด</h2>
+                <p>ตามเมพมันจะมีรูปกล่องแสดงอยู่บนนั้น พยายามเก็บให้ได้มากที่สุดเท่าที่จะทำได้เพราะมันเป็นกล่องที่เอาไว้สะสมวัตถุดิบปลดล็อคแถบเลือด (ต้องครบ 3 ชิ้นต่อการปลด 1 ครั้ง)</p>
+
+                <h2>5. Talent ช่วงต้นเกม</h2>
+                <p>ใครเปิดไปหน้านี้มีตกใจกันบ้างอย่างเยอะ แนะนำสั้นๆ ว่า ใครที่ชอบเรียกร่างอัญเชิญมาช่วยสู้เชิญรับยาช่องขวาได้เลยครับ<br>
+                    ส่วนใครที่ชอบลุยเดียวเลี้ยวซ้ายผ่านตลอด หรือถ้าอยากลงลึกจริงๆ ในเวป Matamgame มีแปลให้นะโคตรดี 🤣🤣🤣</p>
+
+                <h2>6. เปิดหมอกและคอยวอรายงาน Zoe</h2>
+                <p>หากเดินๆ อยู่แล้วเห็นไอคอนดวงตา สัญลักษณ์รูปวิทยุสื่อสารจะปารกฎด้านล่างตัวละครให้คอยกดรายงานเพราะจะมีทั้งเควส และ Lore ของเนื้อเรื่องให้เราได้รับรู้<br>
+                    ส่วนเรื่องเปิดหมอก เมื่อเข้าพื้นที่ใหม่บนเมพจะมีไอคอนเสาสัญญาณให้เรารีบไปเปิดมันก่อนจะได้ระบุตำแหน่งตัวเองได้สะดวก</p>
+
+                <h2>7. รถขนฝัน แฮร่! รถขายไอติม</h2>
+                <p>เมื่อเปิดหมอกบนเมพแล้วจะเห็นรูปไอคอน $ มันจะเป็นรถขายวัตถุดิบในการอัป Ability หรืออัปอาวุธ<br>
+                    แนะนำว่าให้ซื้อเฉพาะที่ขาดเท่านั้นไม่จำเป็นทั้งเหมาทั้งคัน เพราะช่วงกลางไปถึงท้ายเกมพวกวัตถุจะดรอปง่ายขึ้น</p>
+
+                <h2>8. บอส Resonant</h2>
+                <p>บอสจะกระจายอยู่ตามพื้นที่ต่างๆ เก็บตัวไหนก่อนก็ได้มันจะปลดล็อคทักษะพิเศษให้เราเอาไว้ต่อสู้ได้ง่ายขึ้น<br>
+                    แต่มีข้อควรระวังว่า เมื่อไหร่ที่สังหารบอสไปแล้วมอนกีกี๊พื้นที่นั้นๆ จะถูกรีเซ็ตกลับมาใหม่อีกครั้งพร้อมเลเวลที่โหดขึ้น ดังนั้นควรเก็บบอสไว้เป็นมื้อสุดท้ายจะดีกว่า</p>
+
+            </div>
+
+            <!-- ฝั่งขวา: โฆษณาเหมือนหน้าหลัก -->
+            <aside class="sidebar-ads">
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/aariday8" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="image/sponser/Ari.day8.jpg" alt="Ads 1">
+                    </a>
+                </div>
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/RoboCodCenterRobot" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="image/sponser/RoboCod.jpg" alt="Ads 2">
+                    </a>
+                </div>
+
+                <div class="ad-box ad-placeholder">
+                    <div>
+                        <p style="color: var(--gray-text); font-size: 14px; font-weight: bold; line-height: 1.5; margin: 0;">
+                            ✨ พื้นที่โฆษณา<br>
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: normal;">(ขนาด 200 x 400 px)<br>สนใจติดต่อลงโฆษณา</span>
+                        </p>
+                    </div>
+                </div>
+                
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <img src="image/index/1.1.png" alt="MATAM Logo" style="height: 35px; margin-bottom: 15px; display: block;">
+                <p>ที่นี่คือ 'MATAM' เราคือพิกัดนำทางที่จะพาคุณไป 'ตามเกม' ทุกมิติ! ตั้งแต่รีวิวไอเทม อัปเดตข่าวสาร ตามสไตล์ 'มาตาม'</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/matammegame" target="_blank" class="social-btn">
+                        <img src="image/index/icon-fb.png" alt="Facebook" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                    <a href="https://www.tiktok.com/@matam.game?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn">
+                        <img src="image/index/icon-tt.png" alt="TikTok" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>ข้อมูล</h4>
+                <ul>
+                    <li><a href="index.html">เกม</a></li>
+                    <li><a href="review.html">รีวิว</a></li>
+                    <li><a href="article.html">บทความ</a></li>
+                    <li><a href="calendar.html">ปฏิทินเกม</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p>matam.me.game@gmail.com</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
