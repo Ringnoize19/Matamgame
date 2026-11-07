@@ -140,6 +140,91 @@
             margin-right: auto;        /* จัดรูปให้อยู่กึ่งกลางเป๊ะๆ */
         }
 
+        /* ==========================================
+           🔷 สไตล์สำหรับช่องถ้วยรางวัล PS5 (Trophy System)
+           ========================================== */
+        .trophy-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .trophy-card:hover {
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+        }
+
+        .trophy-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .trophy-img {
+            width: 54px;
+            height: 54px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: var(--dark-navy);
+            flex-shrink: 0;
+        }
+
+        .trophy-info {
+            flex-grow: 1;
+        }
+
+        .trophy-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .trophy-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--dark-navy);
+        }
+
+        .trophy-type-icon {
+            font-size: 20px;
+        }
+        .trophy-type-icon.bronze { color: var(--bronze-color); }
+        .trophy-type-icon.silver { color: var(--silver-color); }
+        .trophy-type-icon.gold { color: var(--gold-color); }
+        .trophy-type-icon.platinum { color: var(--platinum-color); }
+
+        .trophy-desc {
+            font-size: 13px !important;
+            color: #64748b !important;
+            margin-bottom: 0 !important;
+            font-style: italic;
+        }
+
+        .trophy-body {
+            font-size: 14px;
+            color: var(--gray-text);
+            line-height: 1.6;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #cbd5e1;
+        }
+
+        /* ป้ายเตือนถ้วยที่อาจพลาดได้ (Missable) */
+        .badge-missable {
+            display: inline-block;
+            background-color: #fee2e2;
+            color: #ef4444;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        
+
         /* กล่อง Sidebar ด้านขวา */
         .sidebar-ads {
             width: 150px;
@@ -305,8 +390,8 @@
             
             <!-- ฝั่งซ้าย: เนื้อหาบทความไกด์ล่าถ้วย -->
             <div class="content-area">
-                <h1 class="article-title">ไกด์เก็บถ้วย Platinum: Control Resonance (PS5)</h1>
-                <div class="article-date">อัปเดตล่าสุดเมื่อ: 12 ตุลาคม 2569 • เขียนโดย: MATAM Team</div>
+                <h1 class="article-title">แนวทางเก็บถ้วย Control Resonance</h1>
+                <div class="article-date">อัปเดตเมื่อ: พฤศจิกายน 2026 • หมวดหมู่: ไกด์</div>
                 
                 <p>ยินดีต้อนรับสู่คู่มือการเก็บถ้วยยิ้มพราย (Platinum Trophy) สำหรับเกม Control Resonance บนเครื่อง PS5 บทความนี้จะนำทางคุณไปสู่การเก็บถ้วยรางวัลทั้งหมดแบบทีละขั้นตอนครับ!</p>
 
@@ -350,20 +435,7 @@
             </div> <!-- สิ้นสุด content-area -->
 
             <!-- ฝั่งขวา: เมนูนำทางไกด์ (Guide Navigation) & โฆษณา -->
-            <aside class="sidebar-ads">
-                
-                <!-- 🧭 เมนูนำทางถ้วยรางวัล -->
-                <div style="background: var(--white); padding: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                    <div class="guide-nav-title">GUIDE NAVIGATION</div>
-                    <ul class="guide-nav-list">
-                        <li><a href="#trophy-1">Love to Deep Dive</a></li>
-                        <li><a href="#trophy-2">Finalization Protocol</a></li>
-                        <li><a href="#">Paranatural Craftsman</a></li>
-                        <li><a href="#">Psychic Domination</a></li>
-                        <li><a href="#">Intense Precision</a></li>
-                        <li><a href="#">Paranatural Agility</a></li>
-                    </ul>
-                </div>
+            <aside class="sidebar-ads">          
 
                 <!-- 📢 พื้นที่โฆษณา -->
                 <div class="ad-box">
