@@ -14,7 +14,7 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ไกด์ล่าถ้วย Platinum - MATAM</title>
+    <title>เทคนิคช่วงต้นเกม - MATAM</title>
     <style>
         /* Palette สีประจำแบรนด์ MATAM */
         :root {
@@ -23,11 +23,6 @@
             --bg-cream: #F4EFEA;
             --white: #FFFFFF;
             --gray-text: #5A6578;
-            /* สีสำหรับระบบถ้วยรางวัล */
-            --bronze-color: #cd7f32;
-            --silver-color: #a0a0a0;
-            --gold-color: #d4af37;
-            --platinum-color: #4ee2ec;
         }
 
         .logo-img {
@@ -87,7 +82,7 @@
             font-weight: bold; 
         }
 
-        /* จัดเลย์เอาต์หน้าบทความ: ซ้ายเนื้อหา ขวาโฆษณา/เมนูนำทาง */
+        /* จัดเลย์เอาต์หน้าบทความ: ซ้ายเนื้อหา ขวาโฆษณา */
         .main-layout {
             display: flex;
             gap: 30px;
@@ -135,139 +130,19 @@
 
         .article-img {
             width: 100%;
-            max-height: 500px;
-            object-fit: contain;
-            background-color: #f8fafc;
+            max-height: 500px;         /* ปรับความสูงสูงสุดได้ตามชอบ */
+            object-fit: contain;       /* 👈 โชว์รูปเต็มใบ 100% ไม่มีการตัดขอบทิ้ง */
+            background-color: #f8fafc; /* สีพื้นหลังรอบรูปกรณีรูปไม่เต็มกล่อง */
             border-radius: 8px;
             margin: 20px 0;
             display: block;
             margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* ==========================================
-           🔷 สไตล์สำหรับช่องถ้วยรางวัล PS5 (Trophy System)
-           ========================================== */
-        .trophy-card {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 25px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .trophy-card:hover {
-            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-        }
-
-        .trophy-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 12px;
-        }
-
-        .trophy-img {
-            width: 54px;
-            height: 54px;
-            border-radius: 8px;
-            object-fit: cover;
-            background-color: var(--dark-navy);
-            flex-shrink: 0;
-        }
-
-        .trophy-info {
-            flex-grow: 1;
-        }
-
-        .trophy-title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .trophy-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: var(--dark-navy);
-        }
-
-        .trophy-type-icon {
-            font-size: 20px;
-        }
-        .trophy-type-icon.bronze { color: var(--bronze-color); }
-        .trophy-type-icon.silver { color: var(--silver-color); }
-        .trophy-type-icon.gold { color: var(--gold-color); }
-        .trophy-type-icon.platinum { color: var(--platinum-color); }
-
-        .trophy-desc {
-            font-size: 13px !important;
-            color: #64748b !important;
-            margin-bottom: 0 !important;
-            font-style: italic;
-        }
-
-        .trophy-body {
-            font-size: 14px;
-            color: var(--gray-text);
-            line-height: 1.6;
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px dashed #cbd5e1;
-        }
-
-        /* ป้ายเตือนถ้วยที่อาจพลาดได้ (Missable) */
-        .badge-missable {
-            display: inline-block;
-            background-color: #fee2e2;
-            color: #ef4444;
-            font-size: 11px;
-            font-weight: bold;
-            padding: 2px 8px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-        }
-
-        /* 🔷 สไตล์ Guide Navigation ด้านขวา */
-        .guide-nav-title {
-            font-size: 14px;
-            font-weight: bold;
-            color: var(--dark-navy);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid var(--orange-primary);
-            padding-bottom: 5px;
-        }
-
-        .guide-nav-list {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px 0;
-        }
-
-        .guide-nav-list li {
-            margin-bottom: 8px;
-        }
-
-        .guide-nav-list a {
-            font-size: 13px;
-            color: #2563eb;
-            text-decoration: none;
-            transition: 0.2s;
-            display: block;
-            line-height: 1.4;
-        }
-
-        .guide-nav-list a:hover {
-            color: var(--orange-primary);
-            padding-left: 3px;
+            margin-right: auto;        /* จัดรูปให้อยู่กึ่งกลางเป๊ะๆ */
         }
 
         /* กล่อง Sidebar ด้านขวา */
         .sidebar-ads {
-            width: 220px;
+            width: 150px;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
@@ -277,7 +152,7 @@
         }
 
         .ad-box {
-            width: 100%;
+            width: 150px;
             height: 300px;
             background-color: var(--white);
             border-radius: 10px;
@@ -391,6 +266,21 @@
         }
     </style>
 </head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="image/index/1.1.png" alt="MATAM Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html">เกม</a>
+            <a href="review.html">รีวิว</a>
+            <a href="article.html">บทความ</a>
+            <a href="index.html" class="active">ไกด์</a>
+            <a href="calendar.html">ปฏิทินเกม</a>
+        </nav>
+    </header>
 <body>
 
     <!-- Header Navigation -->
@@ -526,6 +416,9 @@
 
         </div>
     </footer>
+
+</body>
+</html>
 
 </body>
 </html>
