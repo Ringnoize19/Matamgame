@@ -207,6 +207,22 @@
             padding-top: 10px;
             border-top: 1px dashed #cbd5e1;
         }
+
+        /* จัดบรรทัดชื่อถ้วยกับไอคอนประเภทถ้วยให้อยู่บรรทัดเดียวกัน */
+        .trophy-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* ขนาดรูปไอคอนประเภทถ้วยเล็กๆ ด้านหลังชื่อ */
+        .trophy-type-small-img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
         
         /* กล่อง Sidebar ด้านขวา */
         .sidebar-ads {
@@ -361,14 +377,14 @@
                 <h1 class="article-title">แนวทางเก็บถ้วย Control Resonance</h1>
                 <div class="article-date">อัปเดตเมื่อ: พฤศจิกายน 2026 • หมวดหมู่: ไกด์</div>
                 
-                <h2>
-                    - ระดับความยากในการเก็บถ้วย: 8/10<br>
-                    - เวลาในการเล่น: ประมาณ 50 ชั่วโมง<br>
-                    - ถ้วยที่อาจพลาดได้: มี (Be What You Want to Be) แต่ก็ยังสามารถแก้ไขได้<br>
-                    - ระดับความยากมีผลกับถ้วยไหม?: ไม่มี<br>
-                    - จำนวนรอบการเล่นขั้นต่ำ: 1 รอบ<br>
-                    - ถ้วยรางวัลทั้งหมด: 50 ถ้วย
-                </h2>
+                <p>
+                    <h2>- ระดับความยากในการเก็บถ้วย:</h2> 8/10<br>
+                    <h2>- เวลาในการเล่น:</h2> ประมาณ 50 ชั่วโมง<br>
+                    <h2>- ถ้วยที่อาจพลาดได้:</h2> มี (Be What You Want to Be) แต่ก็ยังสามารถแก้ไขได้<br>
+                    <h2>- ระดับความยากมีผลกับถ้วยไหม?:</h2> ไม่มี<br>
+                    <h2>- จำนวนรอบการเล่นขั้นต่ำ:</h2> 1 รอบ<br>
+                    <h2>- ถ้วยรางวัลทั้งหมด:</h2> 50 ถ้วย
+                </p>
                 
                 <h2>คำแนะนำ</h2>
                 <p>เหนื่อยมากกกก ยอมรับว่าเป็นสายสปอยก่อนเล่นเพราะจะได้ไม่เสียเวลามาเก็บถ้วยในภายหลัง พอมาเห็นว่ามีถ้วยที่อาจพลาดได้ก็เลยใจจดใจจ่อกับถ้วยนี้เป็นพิเศษ พอเอาเข้าจริงมัวแต่ระวังถ้วยนั้นกลายเป็นขนมไปเลยเมื่อเจอพัชเซิลที่แสนจะปวดหัว</p>
@@ -397,7 +413,9 @@
                         <img src="image/Control-Resonant/control-resonant-trophy-guide.png" class="trophy-img">
                         <div class="trophy-info">
                             <div class="trophy-title-row">
-                                <span class="trophy-name">Interdimensional Protector</span>
+                                <span class="trophy-name">Interdimensional Protector
+                                <img src="image/Control-Resonant/trophy-guide-platinum.png" alt="Platinum" class="trophy-type-small-img">
+                                </span>
                             </div>
                             <p class="trophy-desc">เก็บถ้วยอื่นๆ จนครบ (Platinum)</p>
                         </div>
@@ -413,7 +431,9 @@
                         <img src="image/Control-Resonant/1_control-resonant-trophy-guide.png" class="trophy-img">
                         <div class="trophy-info">
                             <div class="trophy-title-row">
-                                <span class="trophy-name">Graffiti Artist</span>
+                                <span class="trophy-name">Graffiti Artist
+                                <img src="image/Control-Resonant/trophy-guide-gold.png" alt="Platinum" class="trophy-type-small-img">
+                                </span>
                             </div>
                             <p class="trophy-desc">เอาชนะบอส Resonant ครบทั้งหมด 6 ตัว</p>
                         </div>
