@@ -23,6 +23,10 @@
             --bg-cream: #F4EFEA;
             --white: #FFFFFF;
             --gray-text: #5A6578;
+            --bronze-color: #cd7f32;
+            --silver-color: #a0a0a0;
+            --gold-color: #d4af37;
+            --platinum-color: #4ee2ec;
         }
 
         .logo-img {
@@ -128,18 +132,6 @@
             font-size: 15px;
         }
 
-        .article-img {
-            width: 100%;
-            max-height: 500px;         /* ปรับความสูงสูงสุดได้ตามชอบ */
-            object-fit: contain;       /* 👈 โชว์รูปเต็มใบ 100% ไม่มีการตัดขอบทิ้ง */
-            background-color: #f8fafc; /* สีพื้นหลังรอบรูปกรณีรูปไม่เต็มกล่อง */
-            border-radius: 8px;
-            margin: 20px 0;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;        /* จัดรูปให้อยู่กึ่งกลางเป๊ะๆ */
-        }
-
         /* ==========================================
            🔷 สไตล์สำหรับช่องถ้วยรางวัล PS5 (Trophy System)
            ========================================== */
@@ -188,18 +180,10 @@
             color: var(--dark-navy);
         }
 
-        .trophy-type-icon {
-            font-size: 20px;
-        }
-        .trophy-type-icon.bronze { color: var(--bronze-color); }
-        .trophy-type-icon.silver { color: var(--silver-color); }
-        .trophy-type-icon.gold { color: var(--gold-color); }
-        .trophy-type-icon.platinum { color: var(--platinum-color); }
-
         .trophy-desc {
             font-size: 13px !important;
             color: #64748b !important;
-            margin-bottom: 0 !important;
+            margin-top: 4px;
             font-style: italic;
         }
 
@@ -212,22 +196,45 @@
             border-top: 1px dashed #cbd5e1;
         }
 
-        /* ป้ายเตือนถ้วยที่อาจพลาดได้ (Missable) */
-        .badge-missable {
-            display: inline-block;
-            background-color: #fee2e2;
-            color: #ef4444;
-            font-size: 11px;
+        /* 🧭 สไตล์ Guide Navigation ด้านขวา */
+        .guide-nav-title {
+            font-size: 14px;
             font-weight: bold;
-            padding: 2px 8px;
-            border-radius: 4px;
+            color: var(--dark-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--orange-primary);
+            padding-bottom: 5px;
+        }
+
+        .guide-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .guide-nav-list li {
             margin-bottom: 8px;
         }
-        
+
+        .guide-nav-list a {
+            font-size: 13px;
+            color: #2563eb;
+            text-decoration: none;
+            transition: 0.2s;
+            display: block;
+            line-height: 1.4;
+        }
+
+        .guide-nav-list a:hover {
+            color: var(--orange-primary);
+            padding-left: 3px;
+        }
 
         /* กล่อง Sidebar ด้านขวา */
         .sidebar-ads {
-            width: 150px;
+            width: 220px;
             flex-shrink: 0;
             display: flex;
             flex-direction: column;
@@ -237,7 +244,7 @@
         }
 
         .ad-box {
-            width: 150px;
+            width: 100%;
             height: 300px;
             background-color: var(--white);
             border-radius: 10px;
@@ -351,6 +358,7 @@
         }
     </style>
 </head>
+<body>
 
     <!-- Header Navigation -->
     <header>
@@ -369,7 +377,7 @@
     <div class="container">
         <a href="control-resonance.html" class="back-btn">← กลับสู่หน้าหลักเกม Control Resonance</a>
 
-        <!-- Layout เนื้อหาคู่กับโฆษณาและเมนูนำทาง -->
+        <!-- Layout เนื้อหาคู่กับโฆษณา -->
         <div class="main-layout">
             
             <!-- ฝั่งซ้าย: เนื้อหาบทความไกด์ล่าถ้วย -->
@@ -377,88 +385,90 @@
                 <h1 class="article-title">แนวทางเก็บถ้วย Control Resonance</h1>
                 <div class="article-date">อัปเดตเมื่อ: พฤศจิกายน 2026 • หมวดหมู่: ไกด์</div>
                 
-                <p>- ระดับความยากในการเก็บถ้วย: 8/10<br>
+                <p>
+                    - ระดับความยากในการเก็บถ้วย: 8/10<br>
                     - เวลาในการเล่น: ประมาณ 50 ชั่วโมง<br>
                     - ถ้วยที่อาจพลาดได้: มี (Be What You Want to Be) แต่ก็ยังสามารถแก้ไขได้<br>
                     - ระดับความยากมีผลกับถ้วยไหม?: ไม่มี<br>
                     - จำนวนรอบการเล่นขั้นต่ำ: 1 รอบ<br>
-                    - ถ้วยรางวัลทั้งหมด: 50 ถ้วย<br></p>
+                    - ถ้วยรางวัลทั้งหมด: 50 ถ้วย
+                </p>
                 
-                   <h2>คำแนะนำ</h2><br>
-                        <p>เหนื่อยมากกกก ยอมรับว่าเป็นสายสปอยก่อนเล่นเพราะจะได้ไม่เสียเวลามาเก็บถ้วยในภายหลัง
-                         พอมาเห็นว่ามีถ้วยที่อาจพลาดได้ก็เลยใจจดใจจ่อกับถ้วยนี้เป็นพิเศษ พอเอาเข้าจริงมัวแต่ระวังถ้วยนั้นกลายเป็นขนมไปเลยเมื่อเจอพัชเซิลที่แสนจะปวดหัว<br>
+                <h2>คำแนะนำ</h2>
+                <p>เหนื่อยมากกกก ยอมรับว่าเป็นสายสปอยก่อนเล่นเพราะจะได้ไม่เสียเวลามาเก็บถ้วยในภายหลัง พอมาเห็นว่ามีถ้วยที่อาจพลาดได้ก็เลยใจจดใจจ่อกับถ้วยนี้เป็นพิเศษ พอเอาเข้าจริงมัวแต่ระวังถ้วยนั้นกลายเป็นขนมไปเลยเมื่อเจอพัชเซิลที่แสนจะปวดหัว</p>
+                <p>เริ่มต้นแรกจะเห็นได้ว่ามีเควสเยอะแยะน่าปวดหัวถึง 3 เส้นทาง 1.เนื้อเรื่องของ Dylan 2.ตามหา Jesse 3.เอาชนะบอส Resonant แต่ไม่เป็นไรนะเล่นไปตามเนื้อเรื่องของ Dylan ก่อน พอไปถึงพื้นที่ไหนแล้วอีก 2 เควสที่เหลือถ้ามีการแจ้งเตือนก็ให้เริ่มทำได้เลย</p>
+                <p>แต่มีข้อแม้ว่าถ้าไปถึงพื้นที่ West Incursion Zone แล้ว ให้รีบไปที่ซ้ายล่างของพื้นที่จะเริ่มได้ยินเสียงเพลงพร้อมข้อความเด้งว่า “Singing reported?” ให้ขึ้นไปด้านบนของตึกสีน้ำตาล เมื่อเข้าไปจะเข้าสู่เควส “The Party Won’t Stop” ที่บังคับให้ Dylan ร้องเพลงให้ถูกไม่งั้นจะมีคนเสียชีวิต แนะนำให้เลือกตามนี้</p>
+                
+                <p>
+                    - gasoline (ขวา)<br>
+                    - stress (ซ้าย)<br>
+                    - so fleeting (ขวา)<br>
+                    - too long (บน)<br>
+                    - move (ซ้าย)<br>
+                    - fear (ล่าง)<br>
+                    - everything (ขวา)<br>
+                    - higher and higher (บน)<br>
+                    - Shout (ขวา)
+                </p>
 
-                        เริ่มแรกจะเห็นได้ว่ามีเควสเยอะแยะน่าปวดหัวถึง 3 เส้นทาง 🤣🤣🤣 1.เนื้อเรื่องของ Dylan
-                         2.ตามหา Jesse 3.เอาชนะบอส Resonant แต่ไม่เป็นไรนะเล่นไปตามเนื้อเรื่องของ Dylan ก่อน พอไปถึงพื้นที่ไหนแล้วอีก 2 เควสที่เหลือถ้ามีการแจ้งเตือนก็ให้เริ่มทำได้เลย<br>
-
-                        แต่มีข้อแม้ว่าถ้าไปถึงพื้นที่ West Incursion Zone แล้ว ให้รีบไปที่ซ้ายล่างของพื้นที่จะเริ่มได้ยินเสียงเพลงพร้อมข้อความเด้งว่า 
-                        “Singing reported?” ให้ขึ้นไปด้านบนของตึกสีน้ำตาล เมื่อเข้าไปจะเข้าสู่เควส “The Party Won’t Stop” ที่บังคับให้ Dylan ร้องเพลงให้ถูกไม่งั้นจะมีคนเสียชีวิต แนะนำให้เลือกตามนี้</p><br>
-
-                        <p>- gasoline (ขวา)<br>
-                            - stress (ซ้าย)<br>
-                            - so fleeting (ขวา)<br>
-                            - too long (บน)<br>
-                            - move (ซ้าย)<br>
-                            - fear (ล่าง)<br>
-                            - everything (ขวา)<br>
-                            - higher and higher (บน)<br>
-                            - Shout (ขวา)<br></p>
-
-                        <p>จากนั้นก็เล่นตามเควสหลักไปตามปกติและพยายามเก็บเควสรองให้ได้มากที่สุดเท่าที่จะทำได้ก่อนจะจบเกม 
-                            รวมถึงไอคอนหรืออีเว้นท์ต่างๆ ในพื้นที่ก็ด้วย สำรวจทุกซอกทุกซอยเพื่อเก็บทรัพยากรมาอัปเกรดสกิลและอาวุธให้กับ Dylan</p>              
-
-
+                <p>จากนั้นก็เล่นตามเควสหลักไปตามปกติและพยายามเก็บเควสรองให้ได้มากที่สุดเท่าที่จะทำได้ก่อนจะจบเกม รวมถึงไอคอนหรืออีเว้นท์ต่างๆ ในพื้นที่ก็ด้วย สำรวจทุกซอกทุกซอยเพื่อเก็บทรัพยากรมาอัปเกรดสกิลและอาวุธให้กับ Dylan</p>
 
                 <h2>รายการถ้วยรางวัล</h2>
                 
                 <!-- 🏆 ช่องถ้วยที่ 1 -->
                 <div class="trophy-card" id="trophy-1">
                     <div class="trophy-header">
-                        <img src="image/Control-Resonant/trophy-2.png" alt="Trophy Icon" class="trophy-img" onerror="this.src='Control-Resonant/image/Control-Resonant/control-resonant-trophy-guide.png'">
+                        <img src="image/Control-Resonant/trophy-2.png" alt="Trophy Icon" class="trophy-img" onerror="this.src='favicon.png'">
                         <div class="trophy-info">
                             <div class="trophy-title-row">
                                 <span class="trophy-name">Interdimensional Protector</span>
-                            <p class="trophy-desc">เก็บถ้วยอื่นๆ จนครบ</p>
+                            </div>
+                            <p class="trophy-desc">เก็บถ้วยอื่นๆ จนครบ (Platinum)</p>
                         </div>
                     </div>
                     <div class="trophy-body">
                         <p>เก็บถ้วยอื่นจนครบก็จะได้รับถ้วย Platinum</p>
                     </div>
+                </div>
 
                 <!-- 🏆 ช่องถ้วยที่ 2 -->
-                <div class="trophy-card" id="trophy-1">
+                <div class="trophy-card" id="trophy-2">
                     <div class="trophy-header">
-                        <img src="image/Control-Resonant/trophy-2.png" alt="Trophy Icon" class="trophy-img" onerror="this.src='Control-Resonant/image/Control-Resonant/1_control-resonant-trophy-guide.png'">
+                        <img src="image/Control-Resonant/trophy-2.png" alt="Trophy Icon" class="trophy-img" onerror="this.src='favicon.png'">
                         <div class="trophy-info">
                             <div class="trophy-title-row">
                                 <span class="trophy-name">Graffiti Artist</span>
+                            </div>
                             <p class="trophy-desc">เอาชนะบอส Resonant ครบทั้งหมด 6 ตัว</p>
                         </div>
                     </div>
                     <div class="trophy-body">
-                        <p>ในแต่ละพื้นที่จะมีบอสประจำพื้นที่ จำเป็นต้องหาทางไปเอาชนะมัน
+                        <p>ในแต่ละพื้นที่จะมีบอสประจำพื้นที่ จำเป็นต้องหาทางไปเอาชนะมัน:<br>
                             a) The Downtown Resonant in Orientation<br>
                             b) The Central Resonant<br>
                             c) The West Incursion Zone Resonant<br>
                             d) The Park Resonant<br>
                             e) The Underpass Resonant<br>
                             f) The Unknown Resonant
-                            </p>
+                        </p>
                     </div>
-                        
-                    <!-- 🏆 ช่องถ้วยที่ 3 -->
-                    <div class="trophy-card" id="trophy-1">
+                </div>
+                      
+                <!-- 🏆 ช่องถ้วยที่ 3 -->
+                <div class="trophy-card" id="trophy-3">
                     <div class="trophy-header">
-                        <img src="image/Control-Resonant/trophy-2.png" alt="Trophy Icon" class="trophy-img" onerror="this.src='Control-Resonant/image/Control-Resonant/2_control-resonant-trophy-guide.png'">
+                        <img src="image/Control-Resonant/trophy-2.png" alt="Trophy Icon" class="trophy-img" onerror="this.src='favicon.png'">
                         <div class="trophy-info">
                             <div class="trophy-title-row">
                                 <span class="trophy-name">Repeating, Refracting</span>
+                            </div>
                             <p class="trophy-desc">เอาชนะ Hedron</p>
                         </div>
                     </div>
                     <div class="trophy-body">
                         <p>ปลดล็อคตามเนื้อเรื่องหลังจากจบเควส Fight the Core</p>
                     </div>
+                </div>
 
                     <!-- 🏆 ช่องถ้วยที่ 4 -->
                     <div class="trophy-card" id="trophy-1">
