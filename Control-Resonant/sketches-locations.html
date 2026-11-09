@@ -156,9 +156,9 @@
         }
 
         .guide-img {
-            width: 100%;
-            height: 180px; /* คุมความสูงกรอบรูปให้เล็กพอดีตา */
-            object-fit: cover;
+            width: 100%;           /* ขยายให้เต็มความกว้างของกล่อง */
+            height: 200px;         /* กำหนดความสูงมาตรฐานบนคอม (ปรับเพิ่มลดได้ตามชอบ) */
+            object-fit: cover;     /* ช่วยฟิตรูปให้เต็มกรอบสวยๆ ถ้าขนาดสัดส่วนอาจจะเหลื่อมกันเล็กน้อย */
             border-radius: 6px;
             display: block;
             cursor: pointer;
@@ -254,6 +254,10 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            .guide-img {
+                height: 160px;     /* ความสูงบนมือถือ */
+            }
+            
         }
 
         /* Footer */
@@ -423,6 +427,21 @@
                     </div>
                 </div>
 
+                <h2>The West Incursion Zone</h2>
+
+                <!-- 🗺️ รายการคู่มือที่ 5 -->
+                <div class="guide-section">
+                    <p class="guide-desc">• อยู่ทางทิศเหนือของถนนที่นำไปสู่ West Incursion Zone บนดาดฟ้า</p>
+                    <div class="guide-images-grid">
+                        <div class="guide-img-box">
+                            <img src="image/Control-Resonant/9_sketches-locations.jpg" alt="Scene View" class="guide-img" onclick="openModal(this)">
+                        </div>
+                        <div class="guide-img-box">
+                            <img src="image/Control-Resonant/10_sketches-locations.jpg" alt="Map View" class="guide-img" onclick="openModal(this)">
+                        </div>
+                    </div>
+                </div>
+                
             </div> <!-- สิ้นสุด content-area -->
 
             <!-- ฝั่งขวา: โฆษณา -->
