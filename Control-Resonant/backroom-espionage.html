@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5BRCJDEEQE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-5BRCJDEEQE');
+    </script>
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตำแหน่งห้องลับ (Backroom Espionage) - MATAM</title>
+    <style>
+        /* Palette สีประจำแบรนด์ MATAM */
+        :root {
+            --orange-primary: #FF6A00;
+            --dark-navy: #1E2A39;
+            --bg-cream: #F4EFEA;
+            --white: #FFFFFF;
+            --gray-text: #5A6578;
+        }
+
+        .logo-img {
+            height: 40px;
+            width: auto;
+            display: block;
+        }    
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--dark-navy);
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: var(--dark-navy);
+            color: var(--white);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--orange-primary);
+        }
+
+        /* Container & Layout */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .back-btn { 
+            display: inline-block; 
+            margin-bottom: 20px; 
+            color: var(--orange-primary); 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
+        /* จัดเลย์เอาต์หน้าบทความ: ซ้ายเนื้อหา ขวาโฆษณา */
+        .main-layout {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .content-area {
+            flex: 1;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-width: 0;
+        }
+
+        .article-title {
+            font-size: 26px;
+            color: var(--dark-navy);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .article-date {
+            font-size: 13px;
+            color: var(--gray-text);
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .content-area h2 {
+            font-size: 20px;
+            color: var(--dark-navy);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--orange-primary);
+            padding-left: 10px;
+        }
+
+        .content-area p {
+            margin-bottom: 15px;
+            color: var(--gray-text);
+            font-size: 15px;
+        }
+
+        /* 🖼️ สไตล์สำหรับรูปภาพแบบย่อส่วน (สบายตา) และเอฟเฟกต์คลิกซูม */
+        .guide-section {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .guide-desc {
+            font-weight: 500;
+            color: var(--dark-navy);
+            margin-bottom: 12px;
+        }
+
+        .guide-images-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .guide-img-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 6px;
+        }
+
+        .guide-img {
+            width: 100%;           /* ขยายให้เต็มความกว้างของกล่อง */
+            height: 200px;         /* กำหนดความสูงมาตรฐานบนคอม (ปรับเพิ่มลดได้ตามชอบ) */
+            object-fit: cover;     /* ช่วยฟิตรูปให้เต็มกรอบสวยๆ ถ้าขนาดสัดส่วนอาจจะเหลื่อมกันเล็กน้อย */
+            border-radius: 6px;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .guide-img:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+
+        /* คลาสสำหรับรูปใหญ่เต็มตา */
+        .guide-img-large {
+            width: 100%;
+            height: 350px; /* ปรับความสูงรูปใหญ่ได้ตามชอบ */
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        /* คลาสสำหรับกลุ่มรูปเล็กเรียงแถว (แบบในรูปตัวอย่าง) */
+        .guide-images-grid-small {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 รูปต่อหนึ่งแถว */
+            gap: 10px;
+        }
+
+        .guide-img-small {
+            width: 100%;
+            height: 120px; /* ความสูงรูปเล็ก */
+            object-fit: cover;
+            border-radius: 6px;
+            display: block;
+            cursor: pointer;
+        }
+
+        /* 🔍 สไตล์หน้าต่าง Pop-up ขยายรูปใหญ่ (Lightbox Modal) */
+        .image-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-modal img {
+            max-width: 90%;
+            max-height: 90vh;
+            border-radius: 8px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            object-fit: contain;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--orange-primary);
+        }
+
+        /* กล่อง Sidebar ด้านขวา */
+        .sidebar-ads {
+            width: 150px;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .ad-box {
+            width: 150px;
+            height: 300px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* สำหรับจอมือถือ */
+        @media screen and (max-width: 768px) {
+            .main-layout {
+                flex-direction: column;
+            }
+            .sidebar-ads {
+                width: 100% !important;
+                position: static;
+            }
+            .guide-images-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .guide-img {
+                height: 160px;     /* ความสูงบนมือถือ */
+            }
+            
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-navy);
+            color: #94a3b8;
+            padding: 50px 30px 30px 30px;
+            margin-top: 60px;
+            border-top: 3px solid var(--orange-primary);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            font-size: 16px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .footer-col p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--orange-primary);
+            padding-left: 5px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .social-btn {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--orange-primary);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="image/index/1.1.png" alt="MATAM Logo" class="logo-img">
+        </a>
+        <nav>
+            <a href="index.html">เกม</a>
+            <a href="review.html">รีวิว</a>
+            <a href="article.html">บทความ</a>
+            <a href="index.html" class="active">ไกด์</a>
+            <a href="calendar.html">ปฏิทินเกม</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <a href="control-resonance.html" class="back-btn">← กลับสู่หน้าหลักเกม Control Resonance</a>
+
+        <!-- Layout เนื้อหาคู่กับโฆษณา -->
+        <div class="main-layout">
+            
+            <!-- ฝั่งซ้าย: เนื้อหาบทความคู่มือและรูปภาพ -->
+            <div class="content-area">
+                <h1 class="article-title">ตำแหน่งห้องลับ (Backroom Espionage)</h1>
+                <div class="article-date">อัปเดตเมื่อ: พฤศจิกายน 2026 • หมวดหมู่: ไกด์</div>
+                
+                <p>ทั่วทั้งแมนฮัตตันจะมีห้องลับนิรภัยซ่อนอยู่ บนแผนที่จะแสดงเป็นไอคอนรูป "?" ให้เราเข้าไปแก้ไขปริศนาเพื่อเปิดห้องลับดังกล่าว<br>
+                โดยจะมีอยู่ด้วยกันทั้งหมด 6 สถานที่ เมื่อทำครบทุกที่แล้วจะปลดล็อคถ้วยรางวัล Backroom Espionage</p>
+
+                <h2>The Downtown</h2>
+
+                <!-- 🗺️ รายการคู่มือที่ 1 -->
+                <div class="guide-section">
+                    <p class="guide-desc">ห้องลับแห่งแรกตั้งอยู่ทางทิศเหนือของ Oldest House เป็นร้านกาแฟที่ใช้ชื่อว่า ATLANTIS</p>
+                    <div class="guide-images-grid">
+                        <div class="guide-img-box">
+                            <img src="image/Control-Resonant/1_backroom-espionage.jpg" alt="Big View" class="guide-img-large" onclick="openModal(this)">
+                        </div>
+                    </div>
+                    
+                    <p class="guide-desc">เมื่อเข้าไปจะพบกับข้อความบนเคาน์เตอร์บอกว่าเจ้าของร้านชอบเปิดเครื่องใช้ไฟฟ้าตามลำดับ โดยเริ่มจากเครื่องเล็กที่สุดไปจนถึงเครื่องใหญ่ที่สุด</p>
+                      
+                        <div class="guide-images-grid-small">
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/2_backroom-espionage.jpg" alt="Small 1" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/3_backroom-espionage.jpg" alt="Small 2" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                        </div>
+
+                    <p class="guide-desc">คำแนะนำคือให้ไปเปิดระบบไฟก่อนแล้วเรียงลำดับเครื่องใช้ไฟฟ้าตามนี้:
+                                          • วิทยุ (บนผนังด้านตะวันตก)
+                                          • เครื่องชงกาแฟบนเคาน์เตอร์สีแดง
+                                          • เครื่องชงกาแฟขนาดใหญ่กว่าเล็กน้อยที่วางอยู่บนตู้ด้านหลัง
+                                          • เครื่องขายโซดา
+                                          • ไมโครเวฟ
+                                          • ตู้เย็น</p>
+
+                        <div class="guide-images-grid">
+                            <div class="guide-img-box">
+                                <img src="image/Control-Resonant/4_backroom-espionage.jpg" alt="Big View" class="guide-img-large" onclick="openModal(this)">
+                            </div>
+                        </div>
+
+                        <div class="guide-images-grid-small">
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/5_backroom-espionage.jpg" alt="Small 1" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/6_backroom-espionage.jpg" alt="Small 2" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/7_backroom-espionage.jpg" alt="Small 3" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/8_backroom-espionage.jpg" alt="Small 4" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/9_backroom-espionage.jpg" alt="Small 5" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                          <div class="guide-img-box">
+                              <img src="image/Control-Resonant/10_backroom-espionage.jpg" alt="Small 6" class="guide-img-small" onclick="openModal(this)">
+                          </div>
+                        </div>
+
+                    <p class="guide-desc">เมื่อทำทุกอย่างแล้วประตูห้องลับจะเปิดออก</p>
+
+              </div> <!-- สิ้นสุด content-area -->
+
+            <!-- ฝั่งขวา: โฆษณา -->
+            <aside class="sidebar-ads">
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/aariday8" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="image/sponser/Ari.day8.jpg" alt="Ads 1">
+                    </a>
+                </div>
+                <div class="ad-box">
+                    <a href="https://www.facebook.com/RoboCodCenterRobot" target="_blank" style="width: 100%; height: 100%; display: block;">
+                        <img src="image/sponser/RoboCod.jpg" alt="Ads 2">
+                    </a>
+                </div>
+
+                <div class="ad-box ad-placeholder">
+                    <div>
+                        <p style="color: var(--gray-text); font-size: 14px; font-weight: bold; line-height: 1.5; margin: 0;">
+                            ✨ พื้นที่โฆษณา<br>
+                            <span style="font-size: 11px; color: #94a3b8; font-weight: normal;">(ขนาด 200 x 400 px)<br>สนใจติดต่อลงโฆษณา</span>
+                        </p>
+                    </div>
+                </div>
+                
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- 🔍 โครงสร้างหน้าต่างสำหรับขยายรูป (Modal) -->
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="" alt="Zoomed Image">
+    </div>
+
+    <!-- Script สำหรับควบคุมการคลิกขยายรูป -->
+    <script>
+        function openModal(element) {
+            var modal = document.getElementById("imageModal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = element.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            
+            <div class="footer-col">
+                <img src="image/index/1.1.png" alt="MATAM Logo" style="height: 35px; margin-bottom: 15px; display: block;">
+                <p>ที่นี่คือ 'MATAM' เราคือพิกัดนำทางที่จะพาคุณไป 'ตามเกม' ทุกมิติ! ตั้งแต่รีวิวไอเทม อัปเดตข่าวสาร ตามสไตล์ 'มาตาม'</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/matammegame" target="_blank" class="social-btn">
+                        <img src="image/index/icon-fb.png" alt="Facebook" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                    <a href="https://www.tiktok.com/@matam.game?is_from_webapp=1&sender_device=pc" target="_blank" class="social-btn">
+                        <img src="image/index/icon-tt.png" alt="TikTok" style="width: 18px; height: 18px; object-fit: contain;">
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>ข้อมูล</h4>
+                <ul>
+                    <li><a href="index.html">เกม</a></li>
+                    <li><a href="review.html">รีวิว</a></li>
+                    <li><a href="article.html">บทความ</a></li>
+                    <li><a href="calendar.html">ปฏิทินเกม</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>ติดต่อเรา</h4>
+                <p>matam.me.game@gmail.com</p>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
